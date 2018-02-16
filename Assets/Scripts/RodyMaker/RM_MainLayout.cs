@@ -24,6 +24,7 @@ public class RM_MainLayout : RM_Layout
 
     public void LoadSprites() {
 
+        bool isSceneSet = true;
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritePath = path + "Sprites\\";
         Debug.Log("LoadSprites spritePath : " + spritePath);
@@ -31,10 +32,20 @@ public class RM_MainLayout : RM_Layout
         // Load miniscenes
         miniScenes[0].GetComponent<Image>().sprite = 
             RM_SaveLoad.LoadSprite(spritePath+0+".png",36,21);
-        for (int i = 1; i<18; i++) {
+        for (int i = 1; i<24; i++) { //TODO dynamically find the number of scenes
             GameObject miniScene = miniScenes[i];
-            miniScene.GetComponent<Image>().sprite = 
-                RM_SaveLoad.LoadSprite(spritePath+(i)+".1.png",36,21);
+            
+            if ((miniScene.GetComponent<Image>().sprite = 
+                RM_SaveLoad.LoadSprite(spritePath+(i)+".1.png",36,21)) == null) // load scenes untill not found
+            {
+                if (isSceneSet)
+                {
+                    isSceneSet = false;
+                    PlayerPrefs.SetInt("lastSceneIndex", (i-1));
+                }
+                else
+                    miniScene.GetComponent<Button>().interactable = false;
+            }
             miniScene.GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
         }
@@ -123,25 +134,17 @@ public class RM_MainLayout : RM_Layout
 
     public void MoveMini(int sliderValue)
     {
-        for (int i=0; i<4; ++i)
+        for (int i=0; i<4; ++i) // for each rows
         {
-            for (int j = 6*i; j < 6*i+6; ++j)
+            for (int j = 6*i; j < 6*i+6; ++j) // 6 miniatures per row
             {
-                if (j < 6 * sliderValue) // mini over the top
+                if (j < 6 * sliderValue || j > 6 * sliderValue + 17) // mini over the top or under the bottom of layout
                     miniScenes[j].SetActive(false);
-
-                else if (j > 6 * sliderValue + 17) // mini under the bottom
-                {
-                    //Debug.Log("slider value : " + sliderValue + ", j value : " + j);
-                    miniScenes[j].SetActive(false);
-                }
                 else
                 {
                     miniScenes[j].SetActive(true);
                     Vector3 minipos = miniScenes[j].GetComponent<Transform>().localPosition;
-                    //Debug.Log("before " + minipos);
                     miniScenes[j].GetComponent<Transform>().localPosition = new Vector3(minipos.x, 22.5f - ((i-sliderValue) * 22.0f), minipos.z);
-                    //Debug.Log("after " + miniScenes[j].GetComponent<Transform>().localPosition);
                 }
             }
 

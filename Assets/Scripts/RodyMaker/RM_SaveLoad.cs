@@ -242,6 +242,7 @@ public static class RM_SaveLoad {
         }
         else {
             Debug.Log("file does not exist : " + spritePath);
+            return null; // to stop the scenes loading
         }
 
         Sprite sprite = new Sprite();

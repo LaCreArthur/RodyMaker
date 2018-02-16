@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: b83056248fabc6a4895935227240bad6
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 5316873c7c3acef40a0c437bda70899b
+  - enabled: 1
+    path: Assets/Scenes/Scene1.unity
+    guid: 95d1d4d31a40b4c4b84e66d38f91be4b
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 2ded921d24ff54f47901d786a9474e83
+  - enabled: 1
+    path: Assets/Scenes/Scene3.unity
+    guid: 5552ccf2612535149ba2d807e41d25e8
+  - enabled: 1
+    path: Assets/Scenes/Scene4.unity
+    guid: 74d91aa1cc2e5974a8874431bb72563a
+  - enabled: 1
+    path: Assets/Scenes/Scene5.unity
+    guid: 681365af66b6d5845953251051f912f8
+  - enabled: 1
+    path: Assets/Scenes/Scene6.unity
+    guid: db1106a226d381044b41a4005c0d7a02
+  - enabled: 1
+    path: Assets/Scenes/Scene7.unity
+    guid: fd4cf8c6220398846ae7b4a3a08ee0d2
+  - enabled: 1
+    path: Assets/Scenes/Scene8.unity
+    guid: 136329185ac5d4445877cdabd08ed94a
+  - enabled: 1
+    path: Assets/Scenes/Scene9.unity
+    guid: 203d65eae322e384bb94b5e247cc0536
+  - enabled: 1
+    path: Assets/Scenes/Scene10.unity
+    guid: 4815d2a2e3be1f1418eef8d8f9f9d6f7
+  - enabled: 1
+    path: Assets/Scenes/Scene11.unity
+    guid: c275c826e4143c8409bf5be048a0dc0d
+  - enabled: 1
+    path: Assets/Scenes/Scene12.unity
+    guid: d75901bb28d48bf42ab09fb603cfe26d
+  - enabled: 1
+    path: Assets/Scenes/Scene13.unity
+    guid: 2fbfce846aa7d6e4cbd10434f652b0c4
+  - enabled: 1
+    path: Assets/Scenes/Scene14.unity
+    guid: addb9ca3e95196d4fb734125dcc40268
+  - enabled: 1
+    path: Assets/Scenes/Scene15.unity
+    guid: 263d5cc470d8c7048aae473e35e385f0
+  - enabled: 1
+    path: Assets/Scenes/Scene16.unity
+    guid: 5f0b1ba791ecfdc4482ec6271dc00ea0
+  - enabled: 1
+    path: Assets/Scenes/Scene17.unity
+    guid: 68d63e84e956bf241843cf7ecc7cb126
+  - enabled: 1
+    path: Assets/Scenes/credit.unity
+    guid: 6939fc59ed200934a96f1eea5ce0538a
+  - enabled: 1
+    path: Assets/Scenes/RM_Main.unity
+    guid: 57c911182c6679a41ba0369dbded8457
+  - enabled: 1
+    path: Assets/Scenes/SynthStandalone.unity
+    guid: 599830f0e28d4e243b4a919a1994b8d5

@@ -110,7 +110,7 @@ public class RM_MainLayout : RM_Layout
     }
 
     public void MiniSceneUpdate() {
-        for (int i = 0; i<23; i++) {
+        for (int i = 0; i<24; i++) {
             miniScenes[i].GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
         }

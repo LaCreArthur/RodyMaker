@@ -241,7 +241,7 @@ public static class RM_SaveLoad {
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritesPath = path + "Sprites\\" + scene.ToString();
 
-        Debug.Log("LoadSceneSprites : path : " + spritesPath);
+        Debug.Log("(LoadSceneSprites) path : " + spritesPath);
 
         for (int i=1; i<5; i++)
         {
@@ -255,18 +255,18 @@ public static class RM_SaveLoad {
         Texture2D tex = null;
         byte[] fileData;
 
-        if (File.Exists(spritePath))
+        if (!File.Exists(spritePath))
         {
-            fileData = File.ReadAllBytes(spritePath);
-            tex = new Texture2D(2, 2);
-            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
-			tex.filterMode = FilterMode.Point;
-			RM_TextureScale.Point(tex,width,height); // resize the texture dimensions to 320*130
+            Debug.Log("(LoadSprite) file does not exist : " + spritePath);
+            File.Copy(PlayerPrefs.GetString("gamePath") + "\\Sprites\\base.png", spritePath);
         }
-        else {
-            Debug.Log("file does not exist : " + spritePath);
-            return null; // to stop the scenes loading
-        }
+        
+        fileData = File.ReadAllBytes(spritePath);
+
+        tex = new Texture2D(2, 2);
+        tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+        tex.filterMode = FilterMode.Point;
+        RM_TextureScale.Point(tex,width,height); // resize the texture dimensions to 320*130
 
         Sprite sprite = new Sprite();
         sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 1f);

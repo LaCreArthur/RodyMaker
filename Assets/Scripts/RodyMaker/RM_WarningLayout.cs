@@ -12,10 +12,6 @@ public class RM_WarningLayout : RM_Layout {
 	}
 	public void AcceptClick(){
 		Debug.Log("Accept button clicked, load scene : " + newScene);
-		
-		if (PlayerPrefs.GetInt("scenesCount") < newScene)
-			PlayerPrefs.SetInt("scenesCount", newScene);
-
 		PlayerPrefs.SetInt("currentScene", newScene);
 		
 		if (test){

@@ -10,7 +10,7 @@ public class RM_ImagesLayout : RM_Layout {
 	}
 	
 	public void SetActiveBtn(){
-		imgAnimBtn.interactable = (gm.activeScene == 1)?false:true;
+		imgAnimBtn.interactable = (gm.currentScene == 0)?false:true;
 	}
 	public void ReturnClick(){
 		Debug.Log("Images return button clicked");
@@ -36,6 +36,6 @@ public class RM_ImagesLayout : RM_Layout {
 		gm.scenePanel.GetComponent<Transform>().localPosition = new Vector3(0,-35,0);
         gm.scenePanel.GetComponent<SpriteRenderer>().sprite = RM_SaveLoad.LoadSprite(path,320,130);
         // update the miniature
-        gm.mainLayout.GetComponent<RM_MainLayout>().miniScenes[gm.activeScene-1].GetComponent<Image>().sprite = RM_SaveLoad.LoadSprite(path,36,21);
+        gm.mainLayout.GetComponent<RM_MainLayout>().miniScenes[gm.currentScene].GetComponent<Image>().sprite = RM_SaveLoad.LoadSprite(path,36,21);
     }
 }

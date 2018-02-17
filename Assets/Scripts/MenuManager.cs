@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject[] buttons;
 	public GameObject[] scenes;
 
-	public int sceneToLoad = 2;
+	public int sceneToLoad = 1;
 	public int actionToLoad = 0;
 
 	private string gamePath;
@@ -32,7 +32,7 @@ public class MenuManager : MonoBehaviour {
 	IEnumerator init() {
 		string spritePath = gamePath + "\\Sprites\\";
 
-		for (int i = 0; i<16; i++) {
+		for (int i = 0; i<16; i++) { //TODO if scrollable menu : change 16 to dynamic number
 			GameObject image = scenes[i].transform.GetChild(0).gameObject;
 			//Debug.Log("load miniature : " + spritePath + (i+1) + ".1.png");
 			image.GetComponent<Image>().sprite = 
@@ -75,7 +75,7 @@ public class MenuManager : MonoBehaviour {
 				SceneManager.LoadScene(2);
 				break;
 			case 1: // Bouton Draw
-				PlayerPrefs.SetInt("currentScene",1);
+				PlayerPrefs.SetInt("currentScene",0);
 				SceneManager.LoadScene(5);
 				break;
 			case 2: // Bouton intro

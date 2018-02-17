@@ -11,7 +11,8 @@ public class Title : MonoBehaviour {
 	public GameObject[] blackPanels;
 	public Image titleImage;
 	private int click = 0;
-	private bool isTitle = true;
+	private bool isTitle = true; // because same script is use for credits 
+	//TODO : improve this
 	
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,10 @@ public class Title : MonoBehaviour {
 		}
 
 		PlayerPrefs.SetString("gamePath", gamePath);
-		
-		Debug.Log("Title : gamePath : " + gamePath);
+		Debug.Log("Title set gamePath as : " + gamePath);
+
+		PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
+		Debug.Log("scenes in this game folder : " + PlayerPrefs.GetInt("scenesCount"));
 
 		titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",320,200);
 		Cursor.visible = false;

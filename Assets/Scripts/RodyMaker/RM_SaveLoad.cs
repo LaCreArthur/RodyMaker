@@ -10,7 +10,7 @@ public static class RM_SaveLoad {
 
 	public static void SaveGame (RM_GameManager gm)
     {
-        int scene = gm.activeScene-1;
+        int scene = gm.currentScene;
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string newPath = "";
         
@@ -97,11 +97,11 @@ public static class RM_SaveLoad {
     }
 
     private static void WriteToTxt(TextWriter sw, int scene, string[] lines, RM_GameManager gm){
-        int currentScene=1;
+        int currentScene=0;
         int currentLine=0;
 
+        // preceding scene rewriting
         for (int i = 1; i<scene; i++) {
-            // preceding scene rewriting
             for (int j = currentLine; lines[j] != "~"; j++) {
                 sw.WriteLine(lines[j]);
                 currentLine++;
@@ -111,6 +111,7 @@ public static class RM_SaveLoad {
             currentScene++;
         }
 
+        // current scene writting
         sw.WriteLine("#######################\n###### scene "+scene+" ########\n#######################");
         sw.WriteLine("## phonems\n" + gm.introDial1 + "\n" + gm.introDial2 + "\n" + gm.introDial3 + "\n" + gm.objDial + "\n" + gm.ngpDial + "\n" + gm.fswDial);
         sw.WriteLine("## texts [string]\n" + gm.titleText + "\n" + gm.introText + "\n" + gm.objText + "\n" + gm.ngpText + "\n" + gm.fswText);
@@ -134,7 +135,7 @@ public static class RM_SaveLoad {
         currentScene++; 
         currentLine+=47; // one scene is 47 lines
         
-        for (int i = currentScene; i<19; i++) {
+        for (int i = currentScene; i < PlayerPrefs.GetInt("scenesCount") + 1; i++) { //TODO verify this condition
             // following scene rewriting
             for (int j=currentLine; lines[j] != "~"; j++) {
                     sw.WriteLine(lines[j]);
@@ -198,6 +199,28 @@ public static class RM_SaveLoad {
 		return null;
     }
 
+    public static int CountScenesTxt() {
+        string path = PlayerPrefs.GetString("gamePath") + "\\";
+        int count = 0;
+        try
+        {   
+            using (StreamReader sr = new StreamReader(path + "levels.rody"))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                    if (line == "~") 
+                        count++;
+                sr.Close();
+            }    
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("The file could not be read:");
+            Console.WriteLine(e.Message);
+        }
+		return count;
+    }
+
     private static string readLine(string line) 
     {
         string newLine = (line[0] == '\\')? "" : line[0].ToString();
@@ -236,9 +259,9 @@ public static class RM_SaveLoad {
         {
             fileData = File.ReadAllBytes(spritePath);
             tex = new Texture2D(2, 2);
-            tex.LoadImage(fileData); //..this will auto-re the texture dimensions.
+            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
 			tex.filterMode = FilterMode.Point;
-			RM_TextureScale.Point(tex,width,height); // re the texture dimensions to 320*130
+			RM_TextureScale.Point(tex,width,height); // resize the texture dimensions to 320*130
         }
         else {
             Debug.Log("file does not exist : " + spritePath);
@@ -270,8 +293,8 @@ public static class RM_SaveLoad {
 			float.Parse(sizes[0].Replace("(","")),
 			float.Parse(sizes[1].Replace(")","")),0f);
 
-		Debug.Log(name + "pos : " + rectTransform.localPosition + "\n" 
-				+ name + "size : " + rectTransform.sizeDelta);
+//		Debug.Log(name + "pos : " + rectTransform.localPosition + "\n" 
+//				+ name + "size : " + rectTransform.sizeDelta);
 	}
 
 }

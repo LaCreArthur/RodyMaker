@@ -12,15 +12,18 @@ public class RM_WarningLayout : RM_Layout {
 	}
 	public void AcceptClick(){
 		Debug.Log("Accept button clicked");
-		ResetLayout();
-		gm.activeScene = newScene;
-		gm.Reset();
+		PlayerPrefs.SetInt("currentScene", newScene);
+		
 		if (test){
-			 if (gm.activeScene == 1)
+			 if (newScene == 1)
             SceneManager.LoadScene(0);
         else
-            SceneManager.LoadScene(gm.activeScene);
+            SceneManager.LoadScene(2);
 		}
+
+		gm.activeScene = newScene;
+		gm.Reset();
+		ResetLayout();
 	}
 
 	public void ResetLayout(){

@@ -250,7 +250,7 @@ public static class RM_SaveLoad {
         return sprite;
     }
 
-    public static void LoadObject(string name, string pos, string size) {
+    public static void LoadObject(string name, string pos, string size) { // TODO parsing multiple zones for multi-zone objectives
 		
 		//Debug.Log("set position and size for : " + name);
 		GameObject obj = GameObject.Find(name);

@@ -12341,6 +12341,11 @@ Prefab:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000014222918390, guid: b590015ee3c940f4e9e1da3345266566,
+        type: 2}
+      propertyPath: phonemes.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: facdf4f18cf5384448191195d59b408c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b590015ee3c940f4e9e1da3345266566, type: 2}
   m_IsPrefabParent: 0
@@ -19872,7 +19877,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!222 &2009268941
 CanvasRenderer:

@@ -256,8 +256,8 @@ public static class RM_SaveLoad {
 		GameObject obj = GameObject.Find(name);
 		RectTransform rectTransform = obj.GetComponent<RectTransform>();
 
-		Debug.Log("## " + name + " position\n"+rectTransform.localPosition.x+","+rectTransform.localPosition.y);
-		Debug.Log("## " + name + " size\n"+rectTransform.sizeDelta.x+","+rectTransform.sizeDelta.y);
+		//Debug.Log("## " + name + " position\n"+rectTransform.localPosition.x+","+rectTransform.localPosition.y);
+		//Debug.Log("## " + name + " size\n"+rectTransform.sizeDelta.x+","+rectTransform.sizeDelta.y);
 
 		string[] positions = pos.Split(',');
 		string[] sizes     = size.Split(',');

@@ -2,17 +2,17 @@
 ###### scene 1 ########
 #######################
 ## phonems
-r_o_d_i_ _m_a_m_an_a_ou_v_ai_r_d_ou_s_e_m_an_l_a_p_oh_r_t_e_d_e_t_a_ch_an_b_r
-s_et_d_o_m_a_j i_l_n_i_a_p_l_u_d_e_m_a_r_m_e_l_a_d j_e_l_ai_m_an_j_et .p_r_e_n_et_v_i_t_v_o_v_et_l_o_z_et_a_l_et_v_oi_r_s_i_m_a_m_i_an_n_a_an_c_oh_r
+r_o_d_i_ _m_a_m_an_a_ou_v_ai_r_d_ou_s_e_m_an_l_a_p_oh_r_t_e_d_e_t_a_ch_an_b_r_et_s_a_p_r_ai_t__a_d_et_p_o_z_et_un_b_ai_z_et_s_u_r_t_on_f_r_on . m_ai . ai_l_n_e_t_e_t_r_ou_v_e_r_a_p_a__v_i_un_v_i_t__l_e_p_r_o_f_et_s_eu_r_g_o_b_i_n_o__n_ou_a_t_an
+
 
 l_e_p_o_d_e_m_a_r_m_e_l_a_d d_e_t_a_m_a_m_an_et_v_i_d r_o_d_i l_a_ti_u_r_e_m_a_r_c_et
 un_n_a_v_i_on_v_a a_t_et_r_i_r_s_u_r_l_a_p_i_s_t_d_ai_r_i_ai_r_l_a_m_et_z_on . l_e_v_oi_t_u
 t_a_m_a_m_an_p_o_s_ai_d_u_n_e_f_eu_y_ d_e_b_ou_ch_et . t_r_ou_v_l_a
 ## texts [string]
 DANS LA CHAMBRE DE RODY
-"Rody, maman a ouvert doucement la porte de ta chambre et s'apprête à déposer un baiser sur ton front. Mais elle ne te trouvera pas! Viens vite, le professeur Gobino nous attend."
-Le pot de marmelade de ta maman est vide Rody, l'as-tu remarqué ?
-Un avion va atterrir sur la piste derrière la maison, le vois-tu ?
+"Rody, maman a ouvert doucement la porte de ta chambre et s'apprête à déposer un baiser sur ton front. Mais... elle ne te trouvera pas! Viens vite, le professeur Gobino nous attend."
+Je suis Mastico, le robot. Me vois-tu sur l'écran?... Et Rody, le vois-tu?... Trouve-le et déplace-moi jusqu'à sa main!
+Où Rody a-t-il rangé ses chaussures?
 Ta maman possède une feuille de boucher, trouve-la !
 ## musics [i1..i3 | l1..l15]
 l1,l2
@@ -192,11 +192,11 @@ l4,l4
 ## phonems
 s_a_l_u_l_et_c_o_p_un _ j_e_n_ai_p_a_z_a_s_et_d_et_s_an_s_p_ou_ou_a_l_et ch_et_m_a_m_i . eu_ou_e_z_e_m_an_l_a_r_ch_i_m_a_j o_ou_a_t_u_n_s_o_l_u_s_i_on
 r_e_m_ai_r_s_i_on_l_e_p_r_in_s_d_e_l_a_p_l_a_j d_e_n_ou_z_ai_d_et_r_o_d_i
-.
+
 a_l_on_ch_et_l_a_r_ai_n_d_et_z_a_n_i_m_o_r_o_d_i . v_oi_t_u_l_a_d_j_i_p_d_u_p_r_in_s_d_e_l_a_p_l_a_j
 a_t_an_s_i_on i_l_i_a_t_un_b_oh_l_d_e_s_ou_p_an_c_o_r_ch_o_d . t_ou_ch_l_a
 a_t_u_r_e_m_a_r_c_et_l_et_s_t_r_an . p_o_z_e_m_oi_d_e_s_u
-## texts [string] 
+## texts [string]
 DERRIERE LES ROCHERS
 "Salut les copains, je n'ai pas assez d'essence pour aller chez mamie. Heureusement l'Archimage aura une solution !""Remercions Le Prince de la plage de nous aider Rody."
 Allons chez la Reine des animaux Rody, Vois-tu la jeep du Prince de la plage ?
@@ -208,30 +208,30 @@ l5,l6
 0.9,1,1
 ## is mastico speaking [booleans] ?
 0,1,0,0
-## Object position
+## obj position
 (1.7, -0.2)
-## Object size
+## obj size
 (36.3, 18.2)
-## ObjNear position
+## objNear position
 (103.4, 44.1)
-## ObjNear size
+## objNear size
 (75.9, 29.7)
-## Ngp position
+## NGP position
 (-1.4, -0.9)
-## Ngp size
-(18.4, 13)
+## NGP size
+(18.4, 13.0)
 ## NgpNear position
 (101.8, -49.7)
 ## NgpNear size
 (38.2, 28.5)
-## Fsw position
+## FSW position
 (4.1, -24.9)
-## Fsw size
-(48.7, 77)
-## FswNear position
+## FSW size
+(48.7, 77.0)
+## fswNear position
 (-79.9, -26.7)
-## FswNear size
-(121.7, 81)
+## fswNear size
+(121.7, 81.0)
 ~
 #######################
 ###### scene 6 ########
@@ -239,11 +239,11 @@ l5,l6
 ## phonems
 j_ai_t_an_b_ou_ou_i_n_et_a_l_a_p_oh_ou_t _ p_ai_ou_s_oh_n_e_n_eu_ou_et_p_on . c_e_f_ai_ou
 j_an_t_an_d_u_b_r_u_i_c_i_v_i_in_d_e_d_ai_r_i_ai_r_l_a_m_et_z_on . i_l_i_a_s_u_r_m_an_t_in_n_o_t_r_e_ch_e_m_un v_ai_r_l_e_j_a_r_d_un r_o_d_i
-.
+
 l_et_r_o_ch_et_c_on_t_r l_e_m_u_r_ai_s_e_r_ai_t_un_m_oi_y_in_d_e_l_et_s_c_a_l_a_d_et . l_et_v_oi_ti_u
 r_e_g_a_r_d l_a_b_ai_l_f_on_t_ai_n r_o_d_i . p_ai_r_ch_e_m_oi_s_u_r_s_on_b_ai_c
 un_p_an_g_o_l_in_s_et_c_a_ch_et _ t_r_ou_v_l_e_v_i_t
-## texts [string] 
+## texts [string]
 PANNE D'ESSENCE
 "J'ai tambouriné à la porte, personne ne répond ! Que faire ?"  "J'entends du bruit qui vient de derrière la maison, il y a sûrement un autre chemin vers le jardin, Rody."
 Les rochers contre le muret seraient un moyen de l'escalader, les vois-tu ? 
@@ -255,29 +255,29 @@ l7,l7
 0.9,1,1
 ## is mastico speaking [booleans] ?
 0,1,0,0
-## Object position
+## obj position
 (-7.6, -0.5)
-## Object size
+## obj size
 (41.8, 23.3)
-## ObjNear position
+## objNear position
 (100.4, 6.5)
-## ObjNear size
+## objNear size
 (77.2, 48.3)
-## Ngp position
+## NGP position
 (-4.4, 2.8)
-## Ngp size
+## NGP size
 (5.5, 9.9)
 ## NgpNear position
 (-92.9, -10.5)
 ## NgpNear size
 (36.3, 59.8)
-## Fsw position
+## FSW position
 (5.3, 19.5)
-## Fsw size
+## FSW size
 (6.7, 17.8)
-## FswNear position
+## fswNear position
 (-110.5, 8.2)
-## FswNear size
+## fswNear size
 (66.8, 82.8)
 ~
 #######################

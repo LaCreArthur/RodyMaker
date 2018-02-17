@@ -22,9 +22,8 @@ public class RM_MainLayout : RM_Layout
             objBtn.interactable = IntroBtn.interactable = true;
     }
 
-    public void LoadSprites() {
-
-        bool isSceneSet = true;
+    public void LoadSprites()
+    {
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritePath = path + "Sprites\\";
         Debug.Log("LoadSprites spritePath : " + spritePath);
@@ -34,20 +33,20 @@ public class RM_MainLayout : RM_Layout
             RM_SaveLoad.LoadSprite(spritePath+0+".png",36,21);
         for (int i = 1; i<24; i++) { //TODO dynamically find the number of scenes
             GameObject miniScene = miniScenes[i];
-            
-            if ((miniScene.GetComponent<Image>().sprite = 
-                RM_SaveLoad.LoadSprite(spritePath+(i)+".1.png",36,21)) == null) // load scenes untill not found
+            Sprite miniSprite = RM_SaveLoad.LoadSprite(spritePath + (i) + ".1.png", 36, 21);
+
+            if (miniSprite == null) // load scenes untill not found
             {
-                if (isSceneSet)
-                {
-                    isSceneSet = false;
-                    PlayerPrefs.SetInt("lastSceneIndex", (i-1));
-                }
-                else
-                    miniScene.GetComponent<Button>().interactable = false;
+                PlayerPrefs.SetInt("nextSceneIndex", i);
+                miniScene.GetComponent<Button>().interactable = true; // interactable to add a new scene
+                break; // do not load other scene, they should be consecutive
             }
-            miniScene.GetComponent<Image>().color = notActiveColor;
-            //Debug.Log(spritePath+i+".1.png");
+            else
+            {
+                miniScene.GetComponent<Image>().sprite = miniSprite;
+                //miniScene.GetComponent<Image>().color = notActiveColor;
+                //Debug.Log(spritePath+i+".1.png");
+            }
         }
 
         // Load Scene sprite
@@ -71,6 +70,7 @@ public class RM_MainLayout : RM_Layout
         UnsetLayouts(gm.mainLayout);
         gm.introLayout.GetComponent<RM_IntroLayout>().titleInputField.text = gm.titleText;
     }
+
     public void ImagesClick()
     {
         Debug.Log("Images button clicked");
@@ -119,9 +119,8 @@ public class RM_MainLayout : RM_Layout
     }
 
     public void MiniSceneUpdate() {
-        for (int i = 0; i<17; i++) {
-            GameObject miniScene = miniScenes[i];
-            miniScene.GetComponent<Image>().color = notActiveColor;
+        for (int i = 0; i<23; i++) {
+            miniScenes[i].GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
         }
         miniScenes[gm.activeScene-1].GetComponent<Image>().color = activeColor;
@@ -142,7 +141,9 @@ public class RM_MainLayout : RM_Layout
                     miniScenes[j].SetActive(false);
                 else
                 {
-                    miniScenes[j].SetActive(true);
+                    if (j <= PlayerPrefs.GetInt("nextSceneIndex"))
+                        miniScenes[j].SetActive(true);
+
                     Vector3 minipos = miniScenes[j].GetComponent<Transform>().localPosition;
                     miniScenes[j].GetComponent<Transform>().localPosition = new Vector3(minipos.x, 22.5f - ((i-sliderValue) * 22.0f), minipos.z);
                 }

@@ -90,11 +90,19 @@ public class RM_GameManager : MonoBehaviour {
 		}
 	}
 
-	 public  void ReadSceneStr(){
+	 public void ReadSceneStr(){
         
         string[] sceneStr = new string[26];
 
-		sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene);
+		if (PlayerPrefs.GetInt("scenesCount") + 1 == currentScene) {
+			Debug.Log("Adding a new scene to the counter...");
+			PlayerPrefs.SetInt("scenesCount", currentScene); //TODO update this only when save or it will crash if adding a second scene, btw activate the next new scene button only when save also 
+			Debug.Log("Load default scene text...");
+			sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene-1);
+			mainLayout.GetComponent<RM_MainLayout>().MoveMini((int)mainLayout.GetComponent<RM_MainLayout>().sliderScenes.value);
+		}
+		else
+			sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene);
 
 		// get music string
 		musicIntro = sceneStr[11].Split(',')[0];

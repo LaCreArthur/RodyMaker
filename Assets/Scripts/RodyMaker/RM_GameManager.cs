@@ -35,7 +35,7 @@ public class RM_GameManager : MonoBehaviour {
 	void Start() { 
 		
 		// if gm is load from ingame
-		int inGameScene = PlayerPrefs.GetInt("scene");
+		int inGameScene = PlayerPrefs.GetInt("currentScene");
 		activeScene = (inGameScene > 0)? inGameScene : 1;
 
 		mainLayout.SetActive(true);

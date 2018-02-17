@@ -12,13 +12,15 @@ public class ClickHandler : MonoBehaviour {
 			gm.clickIntro = false;
 		}
 		else if (gm.clickObj) {
-			Debug.Log ("next clicked in obj/ngp/fsw, next = " + SceneManager.GetActiveScene().buildIndex + 1);
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		}
+			Debug.Log ("next clicked in obj/ngp/fsw, next = " + PlayerPrefs.GetInt("currentScene") + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("currentScene", PlayerPrefs.GetInt("currentScene")+1);
+			SceneManager.LoadScene(2);
+        }
 	}
 
 	public void LaunchCredit() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		SceneManager.LoadScene(4);
 	}
 
 	public void RepeatClick() {
@@ -36,8 +38,8 @@ public class ClickHandler : MonoBehaviour {
 	}
 
 	public void DrawClick() {
-		PlayerPrefs.SetInt("scene", SceneManager.GetActiveScene().buildIndex);
-		SceneManager.LoadScene(20);
+		//PlayerPrefs.SetInt("scene", SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(5);
 	}
 
 	public void ngpClick() {

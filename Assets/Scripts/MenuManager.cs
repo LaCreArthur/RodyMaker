@@ -71,11 +71,12 @@ public class MenuManager : MonoBehaviour {
 	public void OnNext() {
 		switch(actionToLoad) {
 			case 0: // Bouton scene
-				SceneManager.LoadScene(sceneToLoad);
+				PlayerPrefs.SetInt("currentScene", sceneToLoad);
+				SceneManager.LoadScene(2);
 				break;
 			case 1: // Bouton Draw
-				PlayerPrefs.SetInt("scene",1);
-				SceneManager.LoadScene(20);
+				PlayerPrefs.SetInt("currentScene",1);
+				SceneManager.LoadScene(5);
 				break;
 			case 2: // Bouton intro
 				LoadGame();
@@ -87,7 +88,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	private void LoadGame(){
-		string[] folderPath = StandaloneFileBrowser.OpenFolderPanel("Dossier de ton jeu...", Application.dataPath + "\\", false);
+		string[] folderPath = StandaloneFileBrowser.OpenFolderPanel("Selectionne le dossier de ton jeu...", Application.dataPath + "\\", false);
 		if (folderPath.Length == 0)
         {
             return;

@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// init the good dial for the current scene
-		InitScene (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        // init the good dial for the current scene
+        currentScene = PlayerPrefs.GetInt("currentScene")-1;
+        InitScene (currentScene);
+
 		// init variables
 		introOver = false;
 		objOver = false;
@@ -90,8 +92,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void InitScene(int scene) {
-
-		currentScene = --scene; 
 
 		introDial1 = "g_l_i_t_ch";
 		introDial2 = "g_l_i_t_ch";

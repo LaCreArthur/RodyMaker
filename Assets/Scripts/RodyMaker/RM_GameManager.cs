@@ -24,7 +24,7 @@ public class RM_GameManager : MonoBehaviour {
 	public GameObject scenePanel;
 	public GameObject objNear, obj, ngpNear, ngp, fswNear, fsw;
 	public SoundManager sm;
-	public int activeScene = 1;
+	public int currentScene = 0;
 	[HideInInspector] 
 	public float pitch1, pitch2, pitch3;
 	[HideInInspector] 
@@ -35,9 +35,8 @@ public class RM_GameManager : MonoBehaviour {
 	void Start() { 
 		
 		// if gm is load from ingame
-		int inGameScene = PlayerPrefs.GetInt("currentScene");
-		activeScene = (inGameScene > 0)? inGameScene : 1;
-
+		currentScene = PlayerPrefs.GetInt("currentScene");
+		
 		mainLayout.SetActive(true);
 		
 		introLayout.SetActive(false);
@@ -86,7 +85,7 @@ public class RM_GameManager : MonoBehaviour {
 		mainLayout.GetComponent<RM_MainLayout>().SetActiveBtn();
 		// objLayout.GetComponent<RM_ObjLayout>().zoneNear.SetActive(false);
 
-		if (activeScene > 1) {
+		if (currentScene != 0) {
 			ReadSceneStr();
 		}
 	}
@@ -95,7 +94,7 @@ public class RM_GameManager : MonoBehaviour {
         
         string[] sceneStr = new string[26];
 
-		sceneStr = RM_SaveLoad.LoadSceneTxt(activeScene-1);
+		sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene);
 
 		// get music string
 		musicIntro = sceneStr[11].Split(',')[0];

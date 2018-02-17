@@ -16,50 +16,41 @@ public class RM_MainLayout : RM_Layout
     }
 
     public void SetActiveBtn(){
-        if (gm.activeScene == 1)
-            objBtn.interactable = IntroBtn.interactable = false;
-        else
-            objBtn.interactable = IntroBtn.interactable = true;
+        objBtn.interactable = IntroBtn.interactable = (gm.currentScene == 0)?false:true;
     }
 
     public void LoadSprites()
     {
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritePath = path + "Sprites\\";
+        int i;
         Debug.Log("LoadSprites spritePath : " + spritePath);
 
         // Load miniscenes
         miniScenes[0].GetComponent<Image>().sprite = 
             RM_SaveLoad.LoadSprite(spritePath+0+".png",36,21);
-        for (int i = 1; i<24; i++) { //TODO dynamically find the number of scenes
-            GameObject miniScene = miniScenes[i];
-            Sprite miniSprite = RM_SaveLoad.LoadSprite(spritePath + (i) + ".1.png", 36, 21);
 
-            if (miniSprite == null) // load scenes untill not found
-            {
-                PlayerPrefs.SetInt("nextSceneIndex", i);
-                miniScene.GetComponent<Button>().interactable = true; // interactable to add a new scene
-                break; // do not load other scene, they should be consecutive
-            }
-            else
-            {
-                miniScene.GetComponent<Image>().sprite = miniSprite;
-                //miniScene.GetComponent<Image>().color = notActiveColor;
-                //Debug.Log(spritePath+i+".1.png");
-            }
+        for (i = 1; i < PlayerPrefs.GetInt("scenesCount") + 1; i++) { 
+            Sprite miniSprite = RM_SaveLoad.LoadSprite(spritePath + (i) + ".1.png", 36, 21);
+            miniScenes[i].GetComponent<Image>().sprite = miniSprite;
+            //miniScene.GetComponent<Image>().color = notActiveColor;
+            //Debug.Log(spritePath+i+".1.png");
         }
 
+        // activate new scene button
+        miniScenes[i].GetComponent<Button>().interactable = true;
+
         // Load Scene sprite
-        if (gm.activeScene == 1)
+        if (gm.currentScene == 0)
             gm.scenePanel.GetComponent<SpriteRenderer>().sprite = 
                 RM_SaveLoad.LoadSprite(spritePath+0+".png",320,240);
         else {
             gm.scenePanel.GetComponent<SpriteRenderer>().sprite = 
-                RM_SaveLoad.LoadSprite(spritePath+(gm.activeScene-1)+".1.png",320,130);
+                RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene)+".1.png",320,130);
             // Load animations frames
-            for (int i=0; i<3; ++i)
+            for (i = 0; i < 3; ++i)
 			    RM_ImgAnimLayout.frames[i] = 
-                    RM_SaveLoad.LoadSprite(spritePath+(gm.activeScene-1)+"."+ (i+2) +".png",320,130);
+                    RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene)+"."+ (i+2) +".png",320,130);
         }
     }
 
@@ -89,7 +80,7 @@ public class RM_MainLayout : RM_Layout
     {
         Debug.Log("Test button clicked");
         gm.warningLayout.GetComponent<RM_WarningLayout>().test = true;
-        gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = gm.activeScene;
+        gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = gm.currentScene;
         UnsetLayouts(gm.mainLayout);
         SetLayouts(gm.warningLayout);
     }
@@ -102,7 +93,7 @@ public class RM_MainLayout : RM_Layout
     public void RM_ResetClick()
     {
         Debug.Log("Reset button clicked");
-        gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = gm.activeScene;
+        gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = gm.currentScene;
         UnsetLayouts(gm.mainLayout);
         SetLayouts(gm.warningLayout);
     }
@@ -111,7 +102,7 @@ public class RM_MainLayout : RM_Layout
     public void RM_SceneClick(int scene)
     {
         Debug.Log("Scene " + scene + " button clicked");
-        if (scene == gm.activeScene)
+        if (scene == gm.currentScene)
             return;
         gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = scene;
         UnsetLayouts(gm.mainLayout);
@@ -123,7 +114,7 @@ public class RM_MainLayout : RM_Layout
             miniScenes[i].GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
         }
-        miniScenes[gm.activeScene-1].GetComponent<Image>().color = activeColor;
+        miniScenes[gm.currentScene].GetComponent<Image>().color = activeColor;
     }
 
     public void SliderHandler ()
@@ -141,7 +132,7 @@ public class RM_MainLayout : RM_Layout
                     miniScenes[j].SetActive(false);
                 else
                 {
-                    if (j <= PlayerPrefs.GetInt("nextSceneIndex"))
+                    if (j <= PlayerPrefs.GetInt("scenesCount") + 1)
                         miniScenes[j].SetActive(true);
 
                     Vector3 minipos = miniScenes[j].GetComponent<Transform>().localPosition;

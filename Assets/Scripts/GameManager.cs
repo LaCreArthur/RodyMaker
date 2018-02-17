@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         // init the good dial for the current scene
-        currentScene = PlayerPrefs.GetInt("currentScene")-1;
+        currentScene = PlayerPrefs.GetInt("currentScene");
         InitScene (currentScene);
 
 		// init variables

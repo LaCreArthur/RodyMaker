@@ -11,6 +11,13 @@ public static class RM_SaveLoad {
 	public static void SaveGame (RM_GameManager gm)
     {
         int scene = gm.currentScene;
+        
+        // increment the counter only if scene is saved, avoid create a second new scene without saving the first one
+        if (PlayerPrefs.GetInt("scenesCount") + 1 == scene) {
+			Debug.Log("Adding a new scene to the counter...");
+			PlayerPrefs.SetInt("scenesCount", scene); 
+        }
+
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string newPath = "";
         
@@ -254,13 +261,13 @@ public static class RM_SaveLoad {
     public static Sprite LoadSprite(string spritePath, int width, int height) {
         Texture2D tex = null;
         byte[] fileData;
-
-        if (!File.Exists(spritePath))
+        
+        if (!File.Exists(spritePath)) // sprite missing or adding a new scene
         {
-            Debug.Log("(LoadSprite) file does not exist : " + spritePath);
+            Debug.Log("(LoadSprite) file does not exist : " + spritePath + ", loading base sprite instead");
             File.Copy(PlayerPrefs.GetString("gamePath") + "\\Sprites\\base.png", spritePath);
         }
-        
+
         fileData = File.ReadAllBytes(spritePath);
 
         tex = new Texture2D(2, 2);
@@ -296,5 +303,56 @@ public static class RM_SaveLoad {
 //		Debug.Log(name + "pos : " + rectTransform.localPosition + "\n" 
 //				+ name + "size : " + rectTransform.sizeDelta);
 	}
+
+    public static void DeleteScene(int scene) {
+        string path = PlayerPrefs.GetString("gamePath") + "\\";
+        Debug.Log("Erase level ..., scenes count : " + PlayerPrefs.GetInt("scenesCount"));
+        Debug.Log("(DeleteScene) Deleting scene " + scene + " sprites ...");
+        for (int i=0; i < 5; ++i){
+            File.Delete(path + "Sprites\\" + scene + "." + i + ".png" );
+        }
+
+        Debug.Log("(DeleteScene) Deleting scene " + scene + " text ...");
+        int currentScene=0;
+        int currentLine=0;
+        string[] lines = File.ReadAllLines(path + "levels.rody");
+
+        try
+        {   // Open the text file using a stream writer.
+            using (TextWriter sw = new StreamWriter(path + "levels.rody"))
+            {
+                for (int i = 1; i<scene; i++) {
+                    for (int j = currentLine; lines[j] != "~"; j++) {
+                        sw.WriteLine(lines[j]);
+                        currentLine++;
+                    }
+                    sw.WriteLine("~");
+                    currentLine++;
+                    currentScene++;
+                }
+                // skip current scene
+                currentScene++;
+                currentLine+=47; // move the lines offset to the next scene
+                for (int i = currentScene; i < PlayerPrefs.GetInt("scenesCount") + 1; i++) {
+                    // following scene rewriting
+                    for (int j=currentLine; lines[j] != "~"; j++) {
+                            sw.WriteLine(lines[j]);
+                        currentLine++;
+                    }
+                    sw.WriteLine("~");
+                    currentLine++;
+                    currentScene++;
+                }
+                sw.Close();
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("The file could not be write:");
+            Console.WriteLine(e.Message);
+        }
+        PlayerPrefs.SetInt("scenesCount", PlayerPrefs.GetInt("scenesCount") - 1);
+        Debug.Log("Erase level done !, scenes count now : " + PlayerPrefs.GetInt("scenesCount"));
+    }
 
 }

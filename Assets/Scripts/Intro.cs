@@ -31,12 +31,12 @@ public class Intro : MonoBehaviour
     public IEnumerator Dialog()
     {
         yield return new WaitForSeconds(0.5f);
+        
         // intro dialog
         if (gm.sm.isMastico1)
             StartCoroutine(gm.sm.MasticoSpeak(gm.getDial(1), false));
         else
         {
-            //gm.SceneAnimator.SetBool("isSpeaking", true);
             gm.sceneAnimator.isSpeaking = true;
             gm.sm.InitPhoneme(gm.getDial(1), gm.sm.pitch1); // Other speak
         }
@@ -45,8 +45,8 @@ public class Intro : MonoBehaviour
         {
             yield return null;
         }
+        
         // little break 
-        //gm.SceneAnimator.SetBool("isSpeaking", false);
         gm.sceneAnimator.isSpeaking = false;
         yield return new WaitForSeconds(0.5f);
 
@@ -56,7 +56,6 @@ public class Intro : MonoBehaviour
                 StartCoroutine(gm.sm.MasticoSpeak(gm.getDial(2), false));
             else
             {
-                //gm.SceneAnimator.SetBool("isSpeaking", true);
                 gm.sceneAnimator.isSpeaking = true;
                 gm.sm.InitPhoneme(gm.getDial(2), gm.sm.pitch2);
             }
@@ -66,7 +65,6 @@ public class Intro : MonoBehaviour
             }
         }
 
-        //gm.SceneAnimator.SetBool("isSpeaking", false);
         gm.sceneAnimator.isSpeaking = false;
 
         if (gm.getDial(6).Count > 0)
@@ -87,9 +85,8 @@ public class Intro : MonoBehaviour
         gm.clickIntro = true;
         isPlaying = false;
 
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 18)
+        if (gm.currentScene == PlayerPrefs.GetInt("scenesCount")) // last scene animation loop
         {
-            //gm.SceneAnimator.SetBool("isSpeaking", true);
             gm.sceneAnimator.isSpeaking = true;
         }
     }

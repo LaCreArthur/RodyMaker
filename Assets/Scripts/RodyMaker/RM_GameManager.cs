@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,6 +37,12 @@ public class RM_GameManager : MonoBehaviour {
 		
 		// if gm is load from ingame
 		currentScene = PlayerPrefs.GetInt("currentScene");
+		
+		// Debug only
+		// PlayerPrefs.SetInt("currentScene", 1);
+		// currentScene = 1;
+		PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
+		Debug.Log("scenes count : " + PlayerPrefs.GetInt("scenesCount"));
 		
 		mainLayout.SetActive(true);
 		
@@ -95,11 +102,8 @@ public class RM_GameManager : MonoBehaviour {
         string[] sceneStr = new string[26];
 
 		if (PlayerPrefs.GetInt("scenesCount") + 1 == currentScene) {
-			Debug.Log("Adding a new scene to the counter...");
-			PlayerPrefs.SetInt("scenesCount", currentScene); //TODO update this only when save or it will crash if adding a second scene, btw activate the next new scene button only when save also 
-			Debug.Log("Load default scene text...");
+			Debug.Log("Load last scene text...");
 			sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene-1);
-			mainLayout.GetComponent<RM_MainLayout>().MoveMini((int)mainLayout.GetComponent<RM_MainLayout>().sliderScenes.value);
 		}
 		else
 			sceneStr = RM_SaveLoad.LoadSceneTxt(currentScene);
@@ -153,4 +157,12 @@ public class RM_GameManager : MonoBehaviour {
 			SceneManager.LoadScene(1);
 		}
 	}
+
+	void OnApplicationQuit()
+    {
+        // delete non-saved new level images
+		if(currentScene > PlayerPrefs.GetInt("scenesCount")) {
+			RM_SaveLoad.DeleteScene(currentScene);
+		}
+    }
 }

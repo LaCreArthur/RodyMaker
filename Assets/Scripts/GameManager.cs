@@ -40,14 +40,21 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         // init the good dial for the current scene
         currentScene = PlayerPrefs.GetInt("currentScene");
-        InitScene (currentScene);
+		
+		if (currentScene <= PlayerPrefs.GetInt("scenesCount")) {
+			InitScene (currentScene);
 
-		// init variables
-		introOver = false;
-		objOver = false;
-		 
-		// start the sequence of events
-		StartCoroutine (Play());
+			// init variables
+			introOver = false;
+			objOver = false;
+			
+			// start the sequence of events
+			StartCoroutine (Play());
+		}
+		else { // try to load a non existing scene
+			Debug.Log("How dare you do that !");
+			SceneManager.LoadScene(4);
+		}
 	}
 	
 	IEnumerator Play() {
@@ -66,6 +73,7 @@ public class GameManager : MonoBehaviour {
 		}
 		Debug.Log("intro done!");
 		// wait for click in intro
+
 		while (!introOver) {
 			yield return null;
 		}

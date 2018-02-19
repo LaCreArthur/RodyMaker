@@ -5,16 +5,22 @@ public class ClickHandler : MonoBehaviour {
 
 	public GameManager gm;
 	public void NextClick() {
+		
+		int nextScene = PlayerPrefs.GetInt("currentScene") + 1;
+		
 		if (gm.clickIntro) {
 			Debug.Log ("next clicked in intro");
-			gm.intro.sceneMusic.Stop();
+			if (nextScene > PlayerPrefs.GetInt("scenesCount")) // it was the last scene, load credits, no objects to found
+				SceneManager.LoadScene(4);
+		
+			gm.intro.sceneMusic.Stop();	
 			gm.introOver = true;
 			gm.clickIntro = false;
 		}
 		else if (gm.clickObj) {
-			Debug.Log ("next clicked in obj/ngp/fsw, next = " + PlayerPrefs.GetInt("currentScene") + 1);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("currentScene", PlayerPrefs.GetInt("currentScene")+1);
+			Debug.Log ("next clicked in obj/ngp/fsw, next = " + nextScene);
+            
+            PlayerPrefs.SetInt("currentScene", nextScene);
 			SceneManager.LoadScene(2);
         }
 	}

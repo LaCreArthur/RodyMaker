@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class RM_MainLayout : RM_Layout
@@ -8,6 +9,7 @@ public class RM_MainLayout : RM_Layout
     public Color activeColor;
     public GameObject[] miniScenes;
     public Slider sliderScenes;
+    public Sprite miniAddSceneSprite;
 
     public Button objBtn, IntroBtn;
 
@@ -25,7 +27,7 @@ public class RM_MainLayout : RM_Layout
         string spritePath = path + "Sprites\\";
         int i;
         Debug.Log("LoadSprites spritePath : " + spritePath);
-
+           
         // Load miniscenes
         miniScenes[0].GetComponent<Image>().sprite = 
             RM_SaveLoad.LoadSprite(spritePath+0+".png",36,21);
@@ -39,6 +41,7 @@ public class RM_MainLayout : RM_Layout
 
         // activate new scene button
         miniScenes[i].GetComponent<Button>().interactable = true;
+        miniScenes[i].GetComponent<Image>().sprite = miniAddSceneSprite;
 
         // Load Scene sprite
         if (gm.currentScene == 0)
@@ -54,7 +57,7 @@ public class RM_MainLayout : RM_Layout
         }
     }
 
-    public void RM_IntroClick()
+    public void IntroClick()
     {
         Debug.Log("Intro button clicked");
         SetLayouts(gm.introLayout,gm.introTextObj);
@@ -88,6 +91,7 @@ public class RM_MainLayout : RM_Layout
     {
         Debug.Log("Save button clicked");
         RM_SaveLoad.SaveGame(gm);
+        MoveMini((int)sliderScenes.value);
     }
 
     public void RM_ResetClick()
@@ -102,8 +106,10 @@ public class RM_MainLayout : RM_Layout
     public void RM_SceneClick(int scene)
     {
         Debug.Log("Scene " + scene + " button clicked");
-        if (scene == gm.currentScene)
+        
+        if (scene == gm.currentScene && scene < 18) //  no action needed
             return;
+        
         gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = scene;
         UnsetLayouts(gm.mainLayout);
         SetLayouts(gm.warningLayout);
@@ -115,6 +121,7 @@ public class RM_MainLayout : RM_Layout
             //Debug.Log(spritePath+i+".1.png");
         }
         miniScenes[gm.currentScene].GetComponent<Image>().color = activeColor;
+        MoveMini((int)sliderScenes.value); // reset new scene button if a scene was deleted
     }
 
     public void SliderHandler ()
@@ -128,18 +135,16 @@ public class RM_MainLayout : RM_Layout
         {
             for (int j = 6*i; j < 6*i+6; ++j) // 6 miniatures per row
             {
-                if (j < 6 * sliderValue || j > 6 * sliderValue + 17) // mini over the top or under the bottom of layout
+                if (j < 6 * sliderValue || j > 6 * sliderValue + 17 || j > PlayerPrefs.GetInt("scenesCount") + 1) // mini over the top or under the bottom of layout
                     miniScenes[j].SetActive(false);
                 else
                 {
                     if (j <= PlayerPrefs.GetInt("scenesCount") + 1)
-                        miniScenes[j].SetActive(true);
-
+                            miniScenes[j].SetActive(true);
                     Vector3 minipos = miniScenes[j].GetComponent<Transform>().localPosition;
                     miniScenes[j].GetComponent<Transform>().localPosition = new Vector3(minipos.x, 22.5f - ((i-sliderValue) * 22.0f), minipos.z);
                 }
             }
-
         }
     }
 }

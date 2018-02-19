@@ -17,25 +17,30 @@ public class Title : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		isTitle = (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)? true:false;
-		int customGame = PlayerPrefs.GetInt("customGame");
-		string gamePath = Application.dataPath + "\\RodyAIbiza";
-		if (customGame == 1) {
-			string customGamePath = PlayerPrefs.GetString("gamePath");
-			if (customGamePath != "" || Directory.Exists(customGamePath)){
-				gamePath = customGamePath;
-				Debug.Log("Launching Custom Game");
+		if (isTitle) {
+			int customGame = PlayerPrefs.GetInt("customGame");
+			string gamePath = Application.dataPath + "\\RodyAIbiza";
+			if (customGame == 1) {
+				string customGamePath = PlayerPrefs.GetString("gamePath");
+				if (customGamePath != "" || Directory.Exists(customGamePath)){
+					gamePath = customGamePath;
+					Debug.Log("Launching Custom Game");
+				}
+				PlayerPrefs.SetInt("customGame",0);
 			}
-			PlayerPrefs.SetInt("customGame",0);
+
+			PlayerPrefs.SetString("gamePath", gamePath);
+			Debug.Log("Title set gamePath as : " + gamePath);
+
+			PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
+			Debug.Log("scenes in this game folder : " + PlayerPrefs.GetInt("scenesCount"));
+		
+			titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",320,200);
+			Cursor.visible = false;
 		}
-
-		PlayerPrefs.SetString("gamePath", gamePath);
-		Debug.Log("Title set gamePath as : " + gamePath);
-
-		PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
-		Debug.Log("scenes in this game folder : " + PlayerPrefs.GetInt("scenesCount"));
-
-		titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",320,200);
-		Cursor.visible = false;
+		else 
+			Cursor.visible = true;
+	
 		StartCoroutine(music());
 		StartCoroutine(appear());
 	}

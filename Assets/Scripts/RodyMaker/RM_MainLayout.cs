@@ -92,7 +92,7 @@ public class RM_MainLayout : RM_Layout
     {
         Debug.Log("Save button clicked");
         RM_SaveLoad.SaveGame(gm);
-        MoveMini((int)sliderScenes.value);
+        gm.Reset();
     }
 
     public void RM_ResetClick()

@@ -23,7 +23,7 @@ public class RM_WarningLayout : RM_Layout {
 		} 
 		else if (gm.currentScene ==  newScene) { // assuming newScene > 17 because RM_SceneClick checks it
 			 // delete current scene (if saved)
-			if (newScene < PlayerPrefs.GetInt("scenesCount"))
+			if (newScene <= PlayerPrefs.GetInt("scenesCount"))
 				RM_SaveLoad.DeleteScene(newScene);
 			else 
 				Debug.Log("cancel new scene creation");

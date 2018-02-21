@@ -90,7 +90,7 @@ public static class RM_SaveLoad {
     }
 
 	private static void SaveSprite(Texture2D tex, string path, string scene, int width = 320, int height = 130) {
-        TextureScale.Point(tex, width, height);
+        RM_TextureScale.Point(tex, width, height);
         var bytes = tex.EncodeToPNG();
         string spritePath = path + "\\Sprites\\";
         if (!Directory.Exists(spritePath))

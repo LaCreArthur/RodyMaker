@@ -162,7 +162,7 @@ public static class RM_SaveLoad {
     public static string[] LoadSceneTxt(int scene)
     {
         string path = PlayerPrefs.GetString("gamePath") + "\\";
-        Debug.Log("LoadSceneTxt gamePath : "+path);
+        // Debug.Log("LoadSceneTxt gamePath : "+path);
         string[] sceneStr = new string[26];
         try
         {   // Open the text file using a stream reader.
@@ -305,14 +305,15 @@ public static class RM_SaveLoad {
 	}
 
     public static void DeleteScene(int scene) {
+        Debug.Log("(DeleteScene) Erase level " + scene + ", scenes count : " + PlayerPrefs.GetInt("scenesCount"));
+        
         string path = PlayerPrefs.GetString("gamePath") + "\\";
-        Debug.Log("Erase level ..., scenes count : " + PlayerPrefs.GetInt("scenesCount"));
-        Debug.Log("(DeleteScene) Deleting scene " + scene + " sprites ...");
-        for (int i=0; i < 5; ++i){
-            File.Delete(path + "Sprites\\" + scene + "." + i + ".png" );
-        }
+        // Debug.Log("(DeleteScene) Deleting scene " + scene + " sprites ...");
+        // for (int i=0; i < 5; ++i){
+        //     File.Delete(path + "Sprites\\" + scene + "." + i + ".png" );
+        // }
 
-        Debug.Log("(DeleteScene) Deleting scene " + scene + " text ...");
+        Debug.Log("(DeleteScene) Deleting text ...");
         int currentScene=0;
         int currentLine=0;
         string[] lines = File.ReadAllLines(path + "levels.rody");

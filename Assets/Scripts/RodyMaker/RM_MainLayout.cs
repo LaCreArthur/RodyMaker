@@ -26,7 +26,7 @@ public class RM_MainLayout : RM_Layout
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritePath = path + "Sprites\\";
         int i;
-        Debug.Log("LoadSprites spritePath : " + spritePath);
+        // Debug.Log("LoadSprites spritePath : " + spritePath);
            
         // Load miniscenes
         miniScenes[0].GetComponent<Image>().sprite = 
@@ -40,9 +40,10 @@ public class RM_MainLayout : RM_Layout
         }
 
         // activate new scene button
-        miniScenes[i].GetComponent<Button>().interactable = true;
-        miniScenes[i].GetComponent<Image>().sprite = miniAddSceneSprite;
-
+        if (i < 29) {// 29 is the last scene
+            miniScenes[i].GetComponent<Button>().interactable = true;
+            miniScenes[i].GetComponent<Image>().sprite = miniAddSceneSprite;
+        }
         // Load Scene sprite
         if (gm.currentScene == 0)
             gm.scenePanel.GetComponent<SpriteRenderer>().sprite = 
@@ -106,17 +107,44 @@ public class RM_MainLayout : RM_Layout
     public void RM_SceneClick(int scene)
     {
         Debug.Log("Scene " + scene + " button clicked");
+        RM_WarningLayout warningLayout = gm.warningLayout.GetComponent<RM_WarningLayout>();
         
-        if (scene == gm.currentScene && scene < 18) //  no action needed
-            return;
+        string strChangeScene = "TU CHANGES DE SCENE \nAttention Rody, cela va effacer les modification non sauvegardées ! Es-tu sûr de vouloir continuer ?";
+	    string strRemoveScene = "TU SUPPRIMES LA SCENE \nAttention Rody, cela va effacer la scène ! Es-tu sûr de vouloir continuer ?";
+        string strCancelScene = "TU ANNULES CETTE NOUVELLE SCENE \nAttention Rody, cela va effacer la scène ! Es-tu sûr de vouloir continuer ?";
+        string strNewScene    = "TU AJOUTE UNE NOUVELLE SCENE \nAttention Rody, cela va effacer les modification non sauvegardées ! Es-tu sûr de vouloir continuer ?";
         
-        gm.warningLayout.GetComponent<RM_WarningLayout>().newScene = scene;
+        if (scene == gm.currentScene) {
+            // >= 18 : remove or cancel
+            if (scene >= 18) {
+                if (scene > PlayerPrefs.GetInt("scenesCount")) {
+                    Debug.Log("cancel?");
+                    warningLayout.warningText.text = strCancelScene;
+                }
+                else {
+                    Debug.Log("delete?");
+                    warningLayout.warningText.text = strRemoveScene;
+                }
+            }
+            // < 18 : nothing
+            else return;
+        }
+            
+        else if (scene > PlayerPrefs.GetInt("scenesCount"))
+                warningLayout.warningText.text = strNewScene;
+        else {
+            Debug.Log("change?");
+            warningLayout.warningText.text = strChangeScene;
+        }
+        
+        warningLayout.newScene = scene;
         UnsetLayouts(gm.mainLayout);
         SetLayouts(gm.warningLayout);
+        
     }
 
     public void MiniSceneUpdate() {
-        for (int i = 0; i<24; i++) {
+        for (int i = 0; i<30; i++) {
             miniScenes[i].GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
         }
@@ -131,7 +159,7 @@ public class RM_MainLayout : RM_Layout
 
     public void MoveMini(int sliderValue)
     {
-        for (int i=0; i<4; ++i) // for each rows
+        for (int i=0; i<5; ++i) // for each rows
         {
             for (int j = 6*i; j < 6*i+6; ++j) // 6 miniatures per row
             {

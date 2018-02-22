@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject b_ngp;
 	public GameObject b_fsw;
 	public GameObject b_mastico;
-	public GameObject obj;
-	public GameObject ngp;
-	public GameObject fsw;
+	public GameObject obj, objNear;
+	public GameObject ngp, ngpNear;
+	public GameObject fsw, fswNear;
 	public SceneAnimator sceneAnimator;
 	[HideInInspector] 
 	public bool introOver,objOver,ngpOver,fswOver,interObj,clickIntro = false,clickObj = false;
@@ -170,12 +170,14 @@ public class GameManager : MonoBehaviour {
         ngpText    = sceneStr[9];
         fswText    = sceneStr[10];
 
-        RM_SaveLoad.LoadObject("Object" , sceneStr[14], sceneStr[15]);
-        RM_SaveLoad.LoadObject("ObjNear", sceneStr[16], sceneStr[17]);
-        RM_SaveLoad.LoadObject("Ngp"	, sceneStr[18], sceneStr[19]);
-        RM_SaveLoad.LoadObject("NgpNear", sceneStr[20], sceneStr[21]);
-        RM_SaveLoad.LoadObject("Fsw"	, sceneStr[22], sceneStr[23]);
-        RM_SaveLoad.LoadObject("FswNear", sceneStr[24], sceneStr[25]);
+        RM_SaveLoad.ReadObjects("objNear", sceneStr[16], sceneStr[17], true);
+        RM_SaveLoad.ReadObjects("obj"    , sceneStr[14], sceneStr[15]);
+        
+        RM_SaveLoad.ReadObjects("ngpNear", sceneStr[20], sceneStr[21], true);
+		RM_SaveLoad.ReadObjects("ngp"	  , sceneStr[18], sceneStr[19]);
+        
+        RM_SaveLoad.ReadObjects("fswNear", sceneStr[24], sceneStr[25], true);
+		RM_SaveLoad.ReadObjects("fsw"	  , sceneStr[22], sceneStr[23]);
     }
 
 	void Update() {

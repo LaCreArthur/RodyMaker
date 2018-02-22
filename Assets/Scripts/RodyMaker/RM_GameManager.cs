@@ -23,8 +23,10 @@ public class RM_GameManager : MonoBehaviour {
 	public GameObject fswTextObj;
 	public GameObject title;
 	public GameObject scenePanel;
-	public GameObject objNear, obj, ngpNear, ngp, fswNear, fsw;
+	public GameObject objNearTemplate, objTemplate;
+	public List<GameObject> objNear, obj, ngpNear, ngp, fswNear, fsw;
 	public SoundManager sm;
+	[HideInInspector] 
 	public int currentScene = 0;
 	[HideInInspector] 
 	public float pitch1, pitch2, pitch3;
@@ -138,18 +140,25 @@ public class RM_GameManager : MonoBehaviour {
 		ngpText    = sceneStr[9];
 		fswText    = sceneStr[10];
 
-		objNear.SetActive(true);
-		ngpNear.SetActive(true);
-		fswNear.SetActive(true);
-        RM_SaveLoad.LoadObject("Object" , sceneStr[14], sceneStr[15]);
-        RM_SaveLoad.LoadObject("ObjNear", sceneStr[16], sceneStr[17]);
-        RM_SaveLoad.LoadObject("Ngp"	, sceneStr[18], sceneStr[19]);
-        RM_SaveLoad.LoadObject("NgpNear", sceneStr[20], sceneStr[21]);
-        RM_SaveLoad.LoadObject("Fsw"	, sceneStr[22], sceneStr[23]);
-        RM_SaveLoad.LoadObject("FswNear", sceneStr[24], sceneStr[25]);
-		objNear.SetActive(false);
-		ngpNear.SetActive(false);
-		fswNear.SetActive(false);
+		objNearTemplate.SetActive(true);
+		objTemplate.SetActive(true);
+		
+		//TODO: multiples objects
+        objNear = RM_SaveLoad.ReadObjects("objNear", sceneStr[16], sceneStr[17], true);
+        ngpNear = RM_SaveLoad.ReadObjects("ngpNear", sceneStr[20], sceneStr[21], true);
+        fswNear = RM_SaveLoad.ReadObjects("fswNear", sceneStr[24], sceneStr[25], true);
+        
+        obj = RM_SaveLoad.ReadObjects("obj" , sceneStr[14], sceneStr[15]);
+		ngp = RM_SaveLoad.ReadObjects("ngp" , sceneStr[18], sceneStr[19]);
+		fsw = RM_SaveLoad.ReadObjects("fsw" , sceneStr[22], sceneStr[23]);
+
+		List<List<GameObject>> zonesList = new List<List<GameObject>>{objNear, ngpNear, fswNear};
+		foreach(List<GameObject> zones in zonesList)
+			foreach (GameObject zone in zones)
+				zone.SetActive(false);
+		
+		objNearTemplate.SetActive(false);
+		objTemplate.SetActive(false);
     }
 
 	void Update() {

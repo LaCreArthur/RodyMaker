@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 public static class RM_SaveLoad {
 
@@ -125,18 +126,18 @@ public static class RM_SaveLoad {
         sw.WriteLine("## musics [i1..i3 | l1..l15]\n" + gm.musicIntro + "," + gm.musicLoop);
         sw.WriteLine("## pitch [float]\n" + gm.pitch1 + "," + gm.pitch2 + "," + gm.pitch3);
         sw.WriteLine("## is mastico speaking [booleans] ?\n" + BoolToString(gm.isMastico1) + "," + BoolToString(gm.isMastico2) + "," + BoolToString(gm.isMastico3) + "," + BoolToString(gm.isZambla));
-        sw.WriteLine("## obj position\n"     + (Vector2) gm.obj.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## obj size\n"         + gm.obj.GetComponent<RectTransform>().sizeDelta);
-        sw.WriteLine("## objNear position\n" + (Vector2) gm.objNear.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## objNear size\n"     + gm.objNear.GetComponent<RectTransform>().sizeDelta);
-        sw.WriteLine("## NGP position\n"     + (Vector2) gm.ngp.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## NGP size\n"         + gm.ngp.GetComponent<RectTransform>().sizeDelta);
-        sw.WriteLine("## NgpNear position\n" + (Vector2) gm.ngpNear.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## NgpNear size\n"     + gm.ngpNear.GetComponent<RectTransform>().sizeDelta);
-        sw.WriteLine("## FSW position\n"     + (Vector2) gm.fsw.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## FSW size\n"         + gm.fsw.GetComponent<RectTransform>().sizeDelta);
-        sw.WriteLine("## fswNear position\n" + (Vector2) gm.fswNear.GetComponent<RectTransform>().localPosition);
-        sw.WriteLine("## fswNear size\n"     + gm.fswNear.GetComponent<RectTransform>().sizeDelta);
+        sw.WriteLine("## obj position\n"     + objListToString(gm.obj));
+        sw.WriteLine("## obj size\n"         + objListToString(gm.obj, true));
+        sw.WriteLine("## objNear position\n" + objListToString(gm.objNear));
+        sw.WriteLine("## objNear size\n"     + objListToString(gm.objNear, true));
+        sw.WriteLine("## NGP position\n"     + objListToString(gm.ngp));
+        sw.WriteLine("## NGP size\n"         + objListToString(gm.ngp, true));
+        sw.WriteLine("## NgpNear position\n" + objListToString(gm.ngpNear));
+        sw.WriteLine("## NgpNear size\n"     + objListToString(gm.ngpNear, true));
+        sw.WriteLine("## FSW position\n"     + objListToString(gm.fsw));
+        sw.WriteLine("## FSW size\n"         + objListToString(gm.fsw, true));
+        sw.WriteLine("## fswNear position\n" + objListToString(gm.fswNear));
+        sw.WriteLine("## fswNear size\n"     + objListToString(gm.fswNear, true));
         sw.WriteLine("~");
         // increment the scene counter
         currentScene++; 
@@ -155,6 +156,18 @@ public static class RM_SaveLoad {
         sw.Close();
     }
 
+    private static string objListToString(List<GameObject> objList, bool size = false) {
+        string objStr = "";
+        foreach (GameObject obj in objList)
+        {
+            if (size)
+                objStr += (Vector2) obj.GetComponent<RectTransform>().sizeDelta + ";";
+            else 
+                objStr += (Vector2) obj.GetComponent<RectTransform>().localPosition + ";";
+        }
+        Debug.Log(objStr);
+        return objStr;
+    }
     private static string BoolToString(bool b) {
         return (b)?"1":"0";
     }
@@ -280,10 +293,55 @@ public static class RM_SaveLoad {
         return sprite;
     }
 
-    public static void LoadObject(string name, string pos, string size) { // TODO parsing multiple zones for multi-zone objectives
+    public static List<GameObject> ReadObjects(string name, string posStr, string sizeStr, bool isNear = false) {
+        
+        if (posStr[posStr.Length - 1] == ';')
+            posStr = posStr.Substring(0, posStr.Length - 1);
+
+        if (sizeStr[sizeStr.Length - 1] == ';')
+            sizeStr = sizeStr.Substring(0, sizeStr.Length - 1);
+        
+        string[] posList  =  posStr.Split(';');
+        string[] sizeList = sizeStr.Split(';');
+
+        int zonesCount = posList.Length;
+        Debug.Log("(readObjects) posList length is : " + zonesCount);
+        
+        if (posList.Length != sizeList.Length) {
+            Debug.Log("(readObjects) posList not same length as sizeList !");
+            return null;
+        }
+
+        // if clone is an object zone parent should be it nearzone or if it is a Near object zone, parent is Objects
+
+        List<GameObject> objects = new List<GameObject>();
+
+        for (int i=0; i < zonesCount; ++i) {
+            
+            GameObject parent, obj;
+            if (isNear) {
+                parent = GameObject.Find("Objects");
+                obj = GameObject.Instantiate(GameObject.Find("ObjNear"), parent.GetComponent<RectTransform>());
+            }
+            else {
+                parent = GameObject.Find(name + "Near" + i);
+                obj = GameObject.Instantiate(GameObject.Find("Obj"), parent.GetComponent<RectTransform>());
+            }
+            
+            obj.name = name+i;
+             
+            Debug.Log("(readObjects) obj name : " + obj.name);
+            Debug.Log("(readObjects) parent name : " + parent.name);
+
+            objects.Add(LoadObject(obj, posList[i], sizeList[i]));
+        }
+        return objects;
+    }
+    public static GameObject LoadObject(GameObject obj, string pos, string size) {
 		
 		//Debug.Log("set position and size for : " + name);
-		GameObject obj = GameObject.Find(name);
+		
+        
 		RectTransform rectTransform = obj.GetComponent<RectTransform>();
 
 		//Debug.Log("## " + name + " position\n"+rectTransform.localPosition.x+","+rectTransform.localPosition.y);
@@ -300,9 +358,10 @@ public static class RM_SaveLoad {
 			float.Parse(sizes[0].Replace("(","")),
 			float.Parse(sizes[1].Replace(")","")),0f);
 
-//		Debug.Log(name + "pos : " + rectTransform.localPosition + "\n" 
-//				+ name + "size : " + rectTransform.sizeDelta);
-	}
+		// Debug.Log(name + "pos : " + rectTransform.localPosition + "\n" 
+		// 		+ name + "size : " + rectTransform.sizeDelta);
+        return obj;
+    }
 
     public static void DeleteScene(int scene) {
         Debug.Log("(DeleteScene) Erase level " + scene + ", scenes count : " + PlayerPrefs.GetInt("scenesCount"));

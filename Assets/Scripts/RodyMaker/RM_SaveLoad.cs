@@ -426,4 +426,31 @@ public static class RM_SaveLoad {
 		}
 	}
 
+        public static void LoadCredits(Text title, Text credits)
+    {
+        string path = PlayerPrefs.GetString("gamePath") + "\\credits.txt";
+        Debug.Log("Read Credits at " + path);
+        // Debug.Log("LoadSceneTxt gamePath : "+path);
+        try
+        {   // Open the text file using a stream reader.
+            using (StreamReader sr = new StreamReader(path))
+            {
+                title.text = sr.ReadLine();
+
+                string creditsStr = "";
+                string line;
+                while ((line = sr.ReadLine()) != null) {
+                    creditsStr += line + "\n";
+                }
+                sr.Close();
+                credits.text = creditsStr;
+                Debug.Log("Read Credits : Done!");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("The file could not be read:");
+            Console.WriteLine(e.Message);
+        }
+    }
 }

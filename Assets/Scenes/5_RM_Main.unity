@@ -1131,8 +1131,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.75, y: -2.7999878}
-  m_SizeDelta: {x: 252.6, y: 52.6}
+  m_AnchoredPosition: {x: -28.75, y: -3.59}
+  m_SizeDelta: {x: 252.6, y: 54.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116333743
 MonoBehaviour:
@@ -12008,8 +12008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.75, y: -2.7999878}
-  m_SizeDelta: {x: 252.6, y: 52.6}
+  m_AnchoredPosition: {x: -28.75, y: -3.72}
+  m_SizeDelta: {x: 252.6, y: 54.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094457493
 MonoBehaviour:
@@ -16019,7 +16019,6 @@ MonoBehaviour:
   fsw: []
   sm: {fileID: 1176777994}
   currentScene: 0
-  objectZonesCount: 1
   pitch1: 0
   pitch2: 0
   pitch3: 0
@@ -18782,6 +18781,7 @@ MonoBehaviour:
   textBtn: {fileID: 0}
   activeObj: 1
   drawState: 0
+  activeZone: 0
   phonems: 
   zonesNear: []
   zones: []
@@ -21098,6 +21098,7 @@ MonoBehaviour:
   textBtn: {fileID: 1690845605}
   activeObj: 1
   drawState: 0
+  activeZone: 0
   phonems: 
   zonesNear: []
   zones: []

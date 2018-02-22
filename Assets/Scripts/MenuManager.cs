@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour {
 		Cursor.visible = false;
 		gamePath = PlayerPrefs.GetString("gamePath");
 		Debug.Log("Menu : gamePath : " + gamePath);
+		PlayerPrefs.SetInt("currentScene", 1);
 		StartCoroutine(init());
 	}
 	

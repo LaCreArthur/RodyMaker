@@ -5,20 +5,55 @@ using System.Collections.Generic;
 public class Scene : MonoBehaviour {
 
 	public GameManager gm;
+    public bool isInit = false;
 
 	private string txt;
 	private List<int> dial;
 	private AudioClip[] fx;
-	private bool isFounded = false;
+	private int objectsToFind = 1;
+	private int step;
 
-	public void Play(int step) {
+    public void Play(int step) {
+		this.step = step;
 		initStep(step);
 		StartCoroutine(Sequence());
 		StartCoroutine(End(step));
 	}
 
-	IEnumerator Sequence() {
+// init the scene variables
+	public void initStep(int step) {
+		if (isInit)
+			return;
+		switch(step) {
+			case 1: 
+				txt  = gm.objText;
+				dial = gm.getDial(3);
+				fx   = gm.sm.sounds_fx_debutObj;
+				objectsToFind = gm.obj.Count;
+				break;
+			case 2:
+				txt  = gm.ngpText;
+				dial = gm.getDial(4);
+				fx   = gm.sm.sounds_fx_debutNgp;
+				objectsToFind = gm.ngp.Count;
+				break;
+			case 3:
+				txt  = gm.fswText;
+				dial = gm.getDial(5);
+				fx   = gm.sm.sounds_non;
+				objectsToFind = gm.fsw.Count;
+				break;
+			default: 
+				txt  = "scene switcher glitch";
+				dial = new List<int> { P.g, P.l, P.i, P.t, P.ch};
+				fx   = gm.sm.sounds_non;
+				break;
+		}
+		Debug.Log("isInit set to true");
+		isInit = true;
+	}
 
+	IEnumerator Sequence() {
 		yield return new WaitForSeconds(0.2f);
 		// remove non unsable buttons
 		gm.p_text.SetActive(false);
@@ -62,11 +97,12 @@ public class Scene : MonoBehaviour {
 		// Start object research
 		gm.clickObj = true;
 		gm.interObj = false;
+		Debug.Log("TOTAL OBJECT TO FIND : " + objectsToFind);
 	}
 
 	IEnumerator End(int step) {
 		// wait until object is founded
-		while (!isFounded)
+		while (objectsToFind > 0)
 			yield return null;
 		gm.b_draw.SetActive(true);
 		gm.b_next.SetActive(true);
@@ -75,47 +111,24 @@ public class Scene : MonoBehaviour {
 			case 1: // obj
 				// Debug.Log(step);
 				gm.b_ngp.SetActive(true);
-				gm.obj.SetActive(false);
+				RM_SaveLoad.SetActiveZones(gm.objNear, gm.obj, false); 
+				// gm.obj.SetActive(false);
 				break;
 			case 2: // ngp
 				gm.b_fsw.SetActive(true);
-				gm.ngp.SetActive(false);
+				RM_SaveLoad.SetActiveZones(gm.ngpNear, gm.ngp, false);
+				// gm.ngp.SetActive(false);
 				break;
 			case 3: // fsw
-				gm.fsw.SetActive(false);
+				RM_SaveLoad.SetActiveZones(gm.fswNear, gm.fsw, false);
+				// gm.fsw.SetActive(false);
 				break;
 			default: break;
 		}
 		gm.clickObj = true;
-		isFounded = false;
 		gm.interObj = true;
 	}
 
-// init the scene variables
-	public void initStep(int step) {
-		switch(step) {
-			case 1: 
-				txt  = gm.objText;
-				dial = gm.getDial(3);
-				fx   = gm.sm.sounds_fx_debutObj;
-				break;
-			case 2:
-				txt  = gm.ngpText;
-				dial = gm.getDial(4);
-				fx   = gm.sm.sounds_fx_debutNgp;
-				break;
-			case 3:
-				txt  = gm.fswText;
-				dial = gm.getDial(5);
-				fx   = gm.sm.sounds_non;
-				break;
-			default: 
-				txt  = "scene switcher glitch";
-				dial = new List<int> { P.g, P.l, P.i, P.t, P.ch};
-				fx   = gm.sm.sounds_non;
-				break;
-		}
-	}
 
 	public void Founded() {
 		if (gm.clickObj) {
@@ -155,7 +168,36 @@ public class Scene : MonoBehaviour {
 		while(gm.MasticoAnimator.GetBool("isSpeaking"))
 			yield return null;
 
-		isFounded = true;
+		objectsToFind--;
+		if (objectsToFind > 0) {
+			gm.clickObj = true; // other objects need to be found
+			int next;
+			switch (step) {
+				case 1: // obj
+					next = gm.obj.Count - objectsToFind;
+					gm.objNear[next-1].SetActive(false);
+					gm.obj[next-1].SetActive(false);
+					gm.objNear[next].SetActive(true);
+					gm.obj[next].SetActive(true);
+					break;
+				case 2: // ngp
+					next = gm.ngp.Count - objectsToFind;
+					gm.ngpNear[next-1].SetActive(false);
+					gm.ngp[next-1].SetActive(false);
+					gm.ngpNear[next].SetActive(true);
+					gm.ngp[next].SetActive(true);
+					break;
+				case 3: // fsw
+					next = gm.fsw.Count - objectsToFind;
+					gm.fswNear[next-1].SetActive(false);
+					gm.fsw[next-1].SetActive(false);
+					gm.fswNear[next].SetActive(true);
+					gm.fsw[next].SetActive(true);
+					break;
+				default: break;
+			}
+			Debug.Log("OBJECT TO FIND : " + objectsToFind);
+		}
 	}
 
 	IEnumerator presque() {

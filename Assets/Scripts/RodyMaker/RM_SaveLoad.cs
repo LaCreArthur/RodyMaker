@@ -415,4 +415,15 @@ public static class RM_SaveLoad {
         Debug.Log("Erase level done !, scenes count now : " + PlayerPrefs.GetInt("scenesCount"));
     }
 
+    public static void SetActiveZones(List<GameObject> zonesNear, List<GameObject> zones, bool activate = true) {
+		foreach (GameObject near in zonesNear)
+		{
+			near.SetActive(activate);
+		}
+		foreach (GameObject zone in zones)
+		{
+			zone.SetActive(activate);
+		}
+	}
+
 }

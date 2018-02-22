@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject b_ngp;
 	public GameObject b_fsw;
 	public GameObject b_mastico;
-	public GameObject obj, objNear;
-	public GameObject ngp, ngpNear;
-	public GameObject fsw, fswNear;
+	public GameObject objNearTemplate, objTemplate;
 	public SceneAnimator sceneAnimator;
+	[HideInInspector]
+	public List<GameObject> obj, objNear, ngp, ngpNear, fsw, fswNear;
 	[HideInInspector] 
 	public bool introOver,objOver,ngpOver,fswOver,interObj,clickIntro = false,clickObj = false;
 	[HideInInspector] 
@@ -78,20 +78,32 @@ public class GameManager : MonoBehaviour {
 			yield return null;
 		}
 		// active the object interactable zone
-		obj.SetActive(true);
+		// obj.SetActive(true);
+		objNear[0].SetActive(true);
+		obj[0].SetActive(true);
+		Debug.Log("isInit set to false");
+		scene.isInit = false;
 		scene.Play(1);
 		// wait for click on ngp or next
 		while (!objOver) {
 			scene.initStep(1);
 			yield return null;
 		}
-		ngp.SetActive(true);
+		// ngp.SetActive(true);
+		ngpNear[0].SetActive(true);
+		ngp[0].SetActive(true);
+		Debug.Log("isInit set to false");
+		scene.isInit = false;
 		scene.Play(2);
 		while (!ngpOver) {
 			scene.initStep(2);
 			yield return null;
 		}
-		fsw.SetActive(true);
+		// fsw.SetActive(true);
+		fswNear[0].SetActive(true);
+		fsw[0].SetActive(true);
+		Debug.Log("isInit set to false");
+		scene.isInit = false;
 		scene.Play(3);
 		while (!fswOver) {
 			scene.initStep(3);
@@ -170,14 +182,21 @@ public class GameManager : MonoBehaviour {
         ngpText    = sceneStr[9];
         fswText    = sceneStr[10];
 
-        RM_SaveLoad.ReadObjects("objNear", sceneStr[16], sceneStr[17], true);
-        RM_SaveLoad.ReadObjects("obj"    , sceneStr[14], sceneStr[15]);
+        objNear = RM_SaveLoad.ReadObjects("objNear", sceneStr[16], sceneStr[17], true);
+        ngpNear = RM_SaveLoad.ReadObjects("ngpNear", sceneStr[20], sceneStr[21], true);
+        fswNear = RM_SaveLoad.ReadObjects("fswNear", sceneStr[24], sceneStr[25], true);
         
-        RM_SaveLoad.ReadObjects("ngpNear", sceneStr[20], sceneStr[21], true);
-		RM_SaveLoad.ReadObjects("ngp"	  , sceneStr[18], sceneStr[19]);
-        
-        RM_SaveLoad.ReadObjects("fswNear", sceneStr[24], sceneStr[25], true);
-		RM_SaveLoad.ReadObjects("fsw"	  , sceneStr[22], sceneStr[23]);
+        obj = RM_SaveLoad.ReadObjects("obj" , sceneStr[14], sceneStr[15]);
+		ngp = RM_SaveLoad.ReadObjects("ngp" , sceneStr[18], sceneStr[19]);
+		fsw = RM_SaveLoad.ReadObjects("fsw" , sceneStr[22], sceneStr[23]);
+
+		List<List<GameObject>> zonesList = new List<List<GameObject>>{objNear, ngpNear, fswNear};
+		foreach(List<GameObject> zones in zonesList)
+			foreach (GameObject zone in zones)
+				zone.SetActive(false);
+		
+		objNearTemplate.SetActive(false);
+		objTemplate.SetActive(false);
     }
 
 	void Update() {

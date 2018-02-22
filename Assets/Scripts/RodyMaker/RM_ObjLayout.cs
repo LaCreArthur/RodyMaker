@@ -12,11 +12,12 @@ public class RM_ObjLayout : RM_Layout {
 	public bool isObj = false;
 	public Button returnBtn, phonemsBtn, zoneBtn, textBtn;
 	[HideInInspector]
-	public int activeObj = 1,  drawState = 0;
+	public int activeObj = 1,  drawState = 0, activeZone = 0;
 	[HideInInspector]
 	public string phonems;
 	[HideInInspector]
-	public GameObject zoneNear, zone;
+	public List<GameObject> zonesNear, zones;
+	private GameObject zoneNear, zone;
 	private RectTransform btransform;
 	private Vector2 startpos, nearPos, nearSize;
 	private bool drawing = false;
@@ -25,7 +26,9 @@ public class RM_ObjLayout : RM_Layout {
 	public void RM_ReturnClick(){
 		Debug.Log("ObjReturn button clicked");
 		SetLayouts(gm.objectsLayout,gm.objTextObj, gm.introTextObj);
-		UnsetLayouts(gm.objLayout, gm.objTextObj, zoneNear);
+		// TODO: unset near zones 
+		UnsetLayouts(gm.objLayout, gm.objTextObj);
+		SetActiveZones(false);
 
 		switch (activeObj)
         {
@@ -61,9 +64,13 @@ public class RM_ObjLayout : RM_Layout {
 		}
 	}
 
-	
+	// TODO: track which zone is edited
 	public void ZoneOnClick() {
-		// start drawing near zone
+		Debug.Log("ZoneOnClick called");
+		// start drawing first near zone
+		zoneNear = zonesNear[activeZone];
+		zone = zones[activeZone];
+
 		if (drawState == 0) {
 			// display instruction
 			zoneHelper.SetActive(true);
@@ -110,6 +117,7 @@ public class RM_ObjLayout : RM_Layout {
 			Debug.Log("Zone Near are no more drawable");
 			// hide instruction
 			SetLayouts(objInputField.gameObject, gm.title);
+			activeZone = 0;
 			zoneHelper.SetActive(false);
 		}
 	}
@@ -121,12 +129,12 @@ public class RM_ObjLayout : RM_Layout {
 			{
 				if (drawState==4 && !isInNearZone(mouseCorrected(Input.mousePosition))) return;
 				drawing = true;
-				Debug.Log("Begin draw zone");
-				Debug.Log("update souris en : "+ mouseCorrected(Input.mousePosition));
+				// Debug.Log("Begin draw zone");
+				// Debug.Log("update souris en : "+ mouseCorrected(Input.mousePosition));
 				startpos = mouseCorrected(Input.mousePosition);
 				drawState = (drawState == 1)? 2:5;
 			}
-			else if ((drawState == 2 || drawState == 5) && Input.GetMouseButtonDown(0) && drawing)
+			else if ((drawState == 2 || drawState == 5) && Input.GetMouseButtonUp(0) && drawing)
 			{
 				if (drawState==5 && !isInNearZone(mouseCorrected(Input.mousePosition))) return;
 				drawing = false;
@@ -138,10 +146,32 @@ public class RM_ObjLayout : RM_Layout {
 				// Debug.Log("button position  : "+ btransform.position);
 			}
 
-			if((drawState == 3 || drawState == 6) && Input.GetMouseButtonDown(1)) {
+			if((drawState == 3 || drawState == 6) && Input.GetMouseButtonDown(0)) {
+				Debug.Log("redraw");
 				btransform.sizeDelta = new Vector2(0,0);
 				drawState = (drawState == 3)? 1:4;
 				zoneBtn.interactable = false;
+			}
+
+			// draw a new zone by pressing right click after one is drawn
+			if(drawState == 6 && Input.GetMouseButtonDown(1)) {
+				Debug.Log("new zone !");
+				drawState = 0;
+				zoneBtn.interactable = false;
+				activeZone++;
+				Debug.Log("zones.Count : "+zones.Count+", activeZone : " + activeZone);
+				if (activeZone < zones.Count) {
+					zoneNear = zonesNear[activeZone];
+					zone = zones[activeZone];
+				}
+				else {
+					// clone first zone
+					zoneNear = GameObject.Instantiate(zonesNear[0],GameObject.Find("Objects").GetComponent<RectTransform>());
+					zone = zoneNear.transform.GetChild(0).gameObject; // should be instantiate by zoneNear
+					zonesNear.Add(zoneNear);
+					zones.Add(zone);
+				}
+				ZoneOnClick();
 			}
 
 			if (drawState == 2 && drawing)
@@ -179,13 +209,13 @@ public class RM_ObjLayout : RM_Layout {
     {
         btransform.sizeDelta = Vector2.Max(startpos, mpos) - Vector2.Min(startpos, mpos);
         btransform.localPosition = Vector2.Min(
-									(Vector2.Min(startpos, mpos) + (btransform.sizeDelta * 0.5f) - new Vector2(160,65)),
+								  (Vector2.Min(startpos, mpos) + (btransform.sizeDelta * 0.5f) - new Vector2(160,65)),
 									new Vector2(320,130));
     }
 
 	private void UpdateObj(Vector2 mpos)
     {
-		Debug.Log("good mouse : " + (mpos.x - 160) + " , " + (mpos.y - 65));
+		// Debug.Log("good mouse : " + (mpos.x - 160) + " , " + (mpos.y - 65));
         btransform.sizeDelta = Vector2.Max(startpos, mpos) - Vector2.Min(startpos, mpos);
         btransform.localPosition = (Vector2.Min(startpos, mpos) + (btransform.sizeDelta * 0.5f)) - nearPos - new Vector2(160,65);
     }
@@ -193,5 +223,16 @@ public class RM_ObjLayout : RM_Layout {
 	public void RM_PhonemesClick(){
 		Debug.Log("phonemes button clicked");
 		SceneManager.LoadScene(6, LoadSceneMode.Additive);
+	}
+
+	public void SetActiveZones(bool activate = true) {
+		foreach (GameObject near in zonesNear)
+		{
+			near.SetActive(activate);
+		}
+		foreach (GameObject zone in zones)
+		{
+			zone.SetActive(activate);
+		}
 	}
 }

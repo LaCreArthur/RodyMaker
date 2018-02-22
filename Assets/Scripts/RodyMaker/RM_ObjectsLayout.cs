@@ -23,26 +23,24 @@ public class RM_ObjectsLayout : RM_Layout {
 		switch (obj) {
 			case 1: 
 				objLayoutScript.objInputField.text = gm.objText;
-				objLayoutScript.zoneNear = gm.objNear;
-				objLayoutScript.zone = gm.obj;
+				objLayoutScript.zonesNear = gm.objNear;
+				objLayoutScript.zones = gm.obj;
 				objLayoutScript.phonems = gm.objDial;
-				gm.objNear.SetActive(true);
 				break;
 			case 2: 
 				objLayoutScript.objInputField.text = gm.ngpText; 
-				objLayoutScript.zoneNear = gm.ngpNear;
-				objLayoutScript.zone = gm.ngp;
+				objLayoutScript.zonesNear = gm.ngpNear;
+				objLayoutScript.zones = gm.ngp;
 				objLayoutScript.phonems = gm.ngpDial;
-				gm.ngpNear.SetActive(true);
 				break;
 			case 3: 
 				objLayoutScript.objInputField.text = gm.fswText; 
-				objLayoutScript.zoneNear = gm.fswNear;
-				objLayoutScript.zone = gm.fsw;
+				objLayoutScript.zonesNear = gm.fswNear;
+				objLayoutScript.zones = gm.fsw;
 				objLayoutScript.phonems = gm.fswDial;
-				gm.fswNear.SetActive(true);
 				break;
 			default: break;
 		}
+		objLayoutScript.SetActiveZones();
 	}
 }

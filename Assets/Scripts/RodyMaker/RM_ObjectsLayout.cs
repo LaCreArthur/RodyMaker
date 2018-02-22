@@ -41,6 +41,6 @@ public class RM_ObjectsLayout : RM_Layout {
 				break;
 			default: break;
 		}
-		objLayoutScript.SetActiveZones();
+		RM_SaveLoad.SetActiveZones(objLayoutScript.zonesNear, objLayoutScript.zones);
 	}
 }

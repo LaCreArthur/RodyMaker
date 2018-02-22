@@ -28,7 +28,7 @@ public class RM_ObjLayout : RM_Layout {
 		SetLayouts(gm.objectsLayout,gm.objTextObj, gm.introTextObj);
 		// TODO: unset near zones 
 		UnsetLayouts(gm.objLayout, gm.objTextObj);
-		SetActiveZones(false);
+		RM_SaveLoad.SetActiveZones(zonesNear, zones, false);
 
 		switch (activeObj)
         {
@@ -74,7 +74,7 @@ public class RM_ObjLayout : RM_Layout {
 		if (drawState == 0) {
 			// display instruction
 			zoneHelper.SetActive(true);
-			zoneHelper.GetComponent<Text>().text = "Clique pour commencer à dessiner la zone proche de l'objet.\nClique une deuxième fois pour valider.\nClique droit pour effacer la zone.";
+			zoneHelper.GetComponent<Text>().text = "Clique et fait glisser pour dessiner la zone proche (jaune) de l'objet.";
 
 			UnsetLayouts(objInputField.gameObject, gm.title);
 			
@@ -95,7 +95,7 @@ public class RM_ObjLayout : RM_Layout {
 		}
 		// start drawing obj zone
 		else if (drawState == 3) { 
-			zoneHelper.GetComponent<Text>().text = "La zone de l'objet doit être à l'intérieur de la zone proche de celui-ci";
+			zoneHelper.GetComponent<Text>().text = "Dessine la zone de l'objet (verte).\n Elle doit être à l'intérieur de la zone proche (jaune)";
 			nearPos = btransform.localPosition;
 			nearSize = btransform.sizeDelta;
 			btransform = zone.GetComponent<RectTransform>();
@@ -137,6 +137,12 @@ public class RM_ObjLayout : RM_Layout {
 			else if ((drawState == 2 || drawState == 5) && Input.GetMouseButtonUp(0) && drawing)
 			{
 				if (drawState==5 && !isInNearZone(mouseCorrected(Input.mousePosition))) return;
+				if (drawState == 2) 
+					zoneHelper.GetComponent<Text>().text = "Reclique pour recommencer ou clique sur \nle bouton du menu pour dessiner la zone de l'objet (verte)";
+				else {
+					string newZoneStr = ((5-activeZone)>0)?"Tu peux rajouter encore " + (5-activeZone) + " zones avec le clique droit ou cliquer" : "Tu ne peux plus ajouter de zone, clique";
+					zoneHelper.GetComponent<Text>().text = newZoneStr + " sur le bouton du menu pour terminer";
+				}
 				drawing = false;
 				Debug.Log("a rectangle is drawn");
 				zoneBtn.interactable = true;
@@ -148,6 +154,10 @@ public class RM_ObjLayout : RM_Layout {
 
 			if((drawState == 3 || drawState == 6) && Input.GetMouseButtonDown(0)) {
 				Debug.Log("redraw");
+				if (drawState == 3) 
+					zoneHelper.GetComponent<Text>().text = "Clique et fait glisser pour dessiner la zone proche (jaune) de l'objet.";
+				else zoneHelper.GetComponent<Text>().text = "Dessine la zone de l'objet (verte).\n Elle doit être à l'intérieur de la zone proche (jaune)";
+				
 				btransform.sizeDelta = new Vector2(0,0);
 				drawState = (drawState == 3)? 1:4;
 				zoneBtn.interactable = false;
@@ -155,21 +165,23 @@ public class RM_ObjLayout : RM_Layout {
 
 			// draw a new zone by pressing right click after one is drawn
 			if(drawState == 6 && Input.GetMouseButtonDown(1)) {
-				Debug.Log("new zone !");
-				drawState = 0;
-				zoneBtn.interactable = false;
-				activeZone++;
-				Debug.Log("zones.Count : "+zones.Count+", activeZone : " + activeZone);
-				if (activeZone < zones.Count) {
-					zoneNear = zonesNear[activeZone];
-					zone = zones[activeZone];
-				}
-				else {
-					// clone first zone
-					zoneNear = GameObject.Instantiate(zonesNear[0],GameObject.Find("Objects").GetComponent<RectTransform>());
-					zone = zoneNear.transform.GetChild(0).gameObject; // should be instantiate by zoneNear
-					zonesNear.Add(zoneNear);
-					zones.Add(zone);
+				if (activeZone < 5) {
+					Debug.Log("new zone !");
+					drawState = 0;
+					zoneBtn.interactable = false;
+					activeZone++;
+					Debug.Log("zones.Count : "+zones.Count+", activeZone : " + activeZone);
+					if (activeZone < zones.Count) {
+						zoneNear = zonesNear[activeZone];
+						zone = zones[activeZone];
+					}
+					else {
+						// clone first zone
+						zoneNear = GameObject.Instantiate(zonesNear[0],GameObject.Find("Objects").GetComponent<RectTransform>());
+						zone = zoneNear.transform.GetChild(0).gameObject; // should be instantiate by zoneNear
+						zonesNear.Add(zoneNear);
+						zones.Add(zone);
+					}
 				}
 				ZoneOnClick();
 			}
@@ -223,16 +235,5 @@ public class RM_ObjLayout : RM_Layout {
 	public void RM_PhonemesClick(){
 		Debug.Log("phonemes button clicked");
 		SceneManager.LoadScene(6, LoadSceneMode.Additive);
-	}
-
-	public void SetActiveZones(bool activate = true) {
-		foreach (GameObject near in zonesNear)
-		{
-			near.SetActive(activate);
-		}
-		foreach (GameObject zone in zones)
-		{
-			zone.SetActive(activate);
-		}
 	}
 }

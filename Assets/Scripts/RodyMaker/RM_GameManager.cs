@@ -143,7 +143,6 @@ public class RM_GameManager : MonoBehaviour {
 		objNearTemplate.SetActive(true);
 		objTemplate.SetActive(true);
 		
-		//TODO: multiples objects
         objNear = RM_SaveLoad.ReadObjects("objNear", sceneStr[16], sceneStr[17], true);
         ngpNear = RM_SaveLoad.ReadObjects("ngpNear", sceneStr[20], sceneStr[21], true);
         fswNear = RM_SaveLoad.ReadObjects("fswNear", sceneStr[24], sceneStr[25], true);

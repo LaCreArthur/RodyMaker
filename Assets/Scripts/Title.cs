@@ -16,6 +16,7 @@ public class Title : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		Screen.SetResolution(1280, 800, false);
 		isTitle = (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)? true:false;
 		if (isTitle) {
 			int customGame = PlayerPrefs.GetInt("customGame");
@@ -38,8 +39,11 @@ public class Title : MonoBehaviour {
 			titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",320,200);
 			Cursor.visible = false;
 		}
-		else 
+		else {
 			Cursor.visible = true;
+			Debug.Log("CREDITS ROLL");
+			RM_SaveLoad.LoadCredits(GameObject.Find("Title").GetComponent<Text>(),GameObject.Find("Credits").GetComponent<Text>());
+		}
 	
 		StartCoroutine(music());
 		StartCoroutine(appear());
@@ -65,8 +69,9 @@ public class Title : MonoBehaviour {
 	}
 
 	IEnumerator appear() {
-		if (!isTitle)
+		if (!isTitle) {
 			yield return null;
+		}
 		else {
 			yield return new WaitForSeconds(0.5f);
 			foreach (GameObject panel in blackPanels) {

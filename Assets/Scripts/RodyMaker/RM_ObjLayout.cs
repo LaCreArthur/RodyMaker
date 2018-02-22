@@ -66,10 +66,51 @@ public class RM_ObjLayout : RM_Layout {
 
 	// TODO: track which zone is edited
 	public void ZoneOnClick() {
-		Debug.Log("ZoneOnClick called");
+		Debug.Log("ZoneOnClick called, activeZone = " + activeZone + ", zones.Count = " + zones.Count);
 		// start drawing first near zone
 		zoneNear = zonesNear[activeZone];
 		zone = zones[activeZone];
+
+		if (activeZone == 0 && zones.Count > 1) {
+			// remove other zones when start drawing or it is impossible to remove them
+			switch (activeObj)
+			{
+				case 1:
+					foreach(GameObject o in gm.objNear.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					foreach(GameObject o in gm.obj.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					gm.objNear.RemoveRange(1, zonesNear.Count-1);
+					gm.obj.RemoveRange(1, zonesNear.Count-1);
+					gm.objNear.Add(zoneNear);
+					gm.objNear.Add(zone);
+					break;
+				case 2:
+					foreach(GameObject o in gm.ngpNear.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					foreach(GameObject o in gm.ngp.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					gm.ngpNear.RemoveRange(1, zonesNear.Count-1);
+					gm.ngp.RemoveRange(1, zonesNear.Count-1);
+					gm.ngpNear.Add(zoneNear);
+					gm.ngpNear.Add(zone);
+					break;
+				case 3:
+					foreach(GameObject o in gm.fswNear.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					foreach(GameObject o in gm.fsw.GetRange(1, zonesNear.Count-1))
+						Destroy(o);
+					gm.fswNear.RemoveRange(1, zonesNear.Count-1);
+					gm.fsw.RemoveRange(1, zonesNear.Count-1);
+					gm.fswNear.Add(zoneNear);
+					gm.fswNear.Add(zone);
+					break;
+				default: break;
+			}
+			
+			zonesNear.RemoveRange(1, zonesNear.Count-1);
+			zones.RemoveRange(1, zones.Count-1);
+		}
 
 		if (drawState == 0) {
 			// display instruction

@@ -48,7 +48,7 @@ public class RM_DialLayout : RM_Layout {
 
 	public void RM_PhonemesClick(){
 		Debug.Log("phonemes button clicked");
-		SceneManager.LoadScene(6, LoadSceneMode.Additive);
+		SceneManager.LoadScene(7, LoadSceneMode.Additive);
 	}
 
 	public void RM_TextClick(){

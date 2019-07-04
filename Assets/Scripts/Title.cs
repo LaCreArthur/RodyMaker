@@ -13,14 +13,16 @@ public class Title : MonoBehaviour {
 	private int click = 0;
 	private bool isTitle = true; // because same script is use for credits 
 	//TODO : improve this
+	int konamiIndex = 0;
+	KeyCode[] konamiCode = new KeyCode[] { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.A };
 	
 	// Use this for initialization
 	void Start () {
 		Screen.SetResolution(1280, 800, false);
-		isTitle = (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)? true:false;
+		isTitle = (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)? true:false;
 		if (isTitle) {
 			int customGame = PlayerPrefs.GetInt("customGame");
-			string gamePath = Application.dataPath + "\\RodyAIbiza";
+			string gamePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Rody7");
 			if (customGame == 1) {
 				string customGamePath = PlayerPrefs.GetString("gamePath");
 				if (customGamePath != "" || Directory.Exists(customGamePath)){
@@ -36,7 +38,7 @@ public class Title : MonoBehaviour {
 			PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
 			Debug.Log("scenes in this game folder : " + PlayerPrefs.GetInt("scenesCount"));
 		
-			titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",320,200);
+			titleImage.sprite = RM_SaveLoad.LoadSprite(gamePath+"\\Sprites\\0.png",0,320,200);
 			Cursor.visible = false;
 		}
 		else {
@@ -53,10 +55,30 @@ public class Title : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
 			click++;
-			if (click == 10) {
-				SceneManager.LoadScene(1);
+			if (click == 5) {
+				skipCredit();
 			}
         }
+		
+		if (Input.anyKeyDown) {
+
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				Cursor.visible = true;
+				SceneManager.LoadScene(0);
+			}
+			else if (Input.GetKeyDown(KeyCode.Return)) {
+				skipCredit();
+			}
+			else if (Input.GetKeyDown(konamiCode[konamiIndex])) {
+				konamiIndex++;
+				Debug.Log("konami : " + konamiIndex);
+			}
+			else {
+				konamiIndex = 0;
+				Debug.Log("konami : " + konamiIndex);
+			}
+		}
+		if (konamiIndex == 10) skipCredit();
 	}
 	IEnumerator music() {
 		yield return new WaitForSeconds(0.1f);
@@ -65,7 +87,7 @@ public class Title : MonoBehaviour {
 		Debug.Log("title music ended");
 		Cursor.visible = true;
 		if (isTitle)
-			SceneManager.LoadScene(1);
+			skipCredit();
 	}
 
 	IEnumerator appear() {
@@ -82,6 +104,6 @@ public class Title : MonoBehaviour {
 	}
 
 	public void skipCredit(){
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(2);
 	}
 }

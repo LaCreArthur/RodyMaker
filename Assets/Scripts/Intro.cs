@@ -37,6 +37,7 @@ public class Intro : MonoBehaviour
             StartCoroutine(gm.sm.MasticoSpeak(gm.getDial(1), false));
         else
         {
+            gm.sm.currentDialIndex = 1;
             gm.sceneAnimator.isSpeaking = true;
             gm.sm.InitPhoneme(gm.getDial(1), gm.sm.pitch1); // Other speak
         }
@@ -56,6 +57,7 @@ public class Intro : MonoBehaviour
                 StartCoroutine(gm.sm.MasticoSpeak(gm.getDial(2), false));
             else
             {
+                gm.sm.currentDialIndex = 2;
                 gm.sceneAnimator.isSpeaking = true;
                 gm.sm.InitPhoneme(gm.getDial(2), gm.sm.pitch2);
             }
@@ -69,10 +71,11 @@ public class Intro : MonoBehaviour
 
         if (gm.getDial(6).Count > 0)
         {
-            if (gm.sm.isMastico3)
+            if (gm.sm.isMastico3) 
                 StartCoroutine(gm.sm.MasticoSpeak(gm.getDial(6), false));
             else
             {
+                gm.sm.currentDialIndex = 3;
                 gm.sm.InitPhoneme(gm.getDial(6), gm.sm.pitch3);
             }
         }

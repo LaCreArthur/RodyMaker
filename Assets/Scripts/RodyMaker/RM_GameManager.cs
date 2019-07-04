@@ -17,6 +17,7 @@ public class RM_GameManager : MonoBehaviour {
 	public GameObject objLayout; 
 	public GameObject musicLayout;
 	public GameObject warningLayout;
+	public GameObject welcomePanel;
 	public GameObject introTextObj;
 	public GameObject objTextObj;
 	public GameObject ngpTextObj;
@@ -28,6 +29,7 @@ public class RM_GameManager : MonoBehaviour {
 	public SoundManager sm;
 	[HideInInspector] 
 	public int currentScene = 0;
+	public int  framesCount = 0;
 	[HideInInspector] 
 	public float pitch1, pitch2, pitch3;
 	[HideInInspector] 
@@ -46,6 +48,12 @@ public class RM_GameManager : MonoBehaviour {
 		PlayerPrefs.SetInt("scenesCount", RM_SaveLoad.CountScenesTxt());
 		Debug.Log("scenes count : " + PlayerPrefs.GetInt("scenesCount"));
 		
+		if (PlayerPrefs.GetInt("rodyMakerFirstTime") == 1) {
+			welcomePanel.SetActive(true);
+		}
+		// set rodyMakerFirstTime to false at rody maker start
+		PlayerPrefs.SetInt("rodyMakerFirstTime", 0);
+
 		mainLayout.SetActive(true);
 		
 		introLayout.SetActive(false);
@@ -87,12 +95,13 @@ public class RM_GameManager : MonoBehaviour {
 
 		introLayout.GetComponent<RM_IntroLayout>().titleInputField.text = null;
 		objLayout.GetComponent<RM_ObjLayout>().objInputField.text = null;
-		
+
 		// Reset miniatures
 		mainLayout.GetComponent<RM_MainLayout>().LoadSprites();
 		mainLayout.GetComponent<RM_MainLayout>().MiniSceneUpdate();
 		mainLayout.GetComponent<RM_MainLayout>().SetActiveBtn();
 		// objLayout.GetComponent<RM_ObjLayout>().zoneNear.SetActive(false);
+
 
 		if (currentScene != 0) {
 			ReadSceneStr();
@@ -162,7 +171,7 @@ public class RM_GameManager : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyUp(KeyCode.Escape)){
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(2);
 		}
 	}
 
@@ -173,4 +182,18 @@ public class RM_GameManager : MonoBehaviour {
 			RM_SaveLoad.DeleteScene(currentScene);
 		}
     }
+
+	public void OnWelcomePanelExit() {
+		welcomePanel.SetActive(false);
+	}
+
+	public void OnWelcomePanelWebsite() {
+		Debug.Log("go on website !");
+		Application.OpenURL("https://lacrearthur.itch.io/rody-maker");
+	}
+
+	public void OnWelcomePanelYoutube() {
+		Debug.Log("go on youtube !");
+		Application.OpenURL("https://youtu.be/1vx8D2irVLI?t=2m17s");
+	}
 }

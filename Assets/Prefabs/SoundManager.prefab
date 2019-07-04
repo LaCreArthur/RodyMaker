@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f40d7144b81b06145b2cfb652a7f1b2a, type: 3}
   - {fileID: 8300000, guid: 6d69232d834d6b34da50d71c98fd8cab, type: 3}
   - {fileID: 8300000, guid: d5abe20726230a243bf185db6d5dfef2, type: 3}
-  - {fileID: 8300000, guid: ee2e064583a42be4ca2e8b7078eca158, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: facdf4f18cf5384448191195d59b408c, type: 3}
   - {fileID: 8300000, guid: 881893a9fb009a049b1c465b453a7ec4, type: 3}
   - {fileID: 8300000, guid: d1253d52eaac5af47956ec2a6f486a7f, type: 3}
@@ -173,6 +173,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ba21a3ccf2cc7654f8d37b334f7379cc, type: 3}
   - {fileID: 8300000, guid: 1179af8b83cbad643a74aa997d1b86e4, type: 3}
   - {fileID: 8300000, guid: c4957dcba7a442c46b2a5cfd75a825aa, type: 3}
+  - {fileID: 8300000, guid: 5a92aab733975d147bbb68b43fe95c23, type: 3}
+  - {fileID: 8300000, guid: d1f3f62f4dd5d79449f028c737838186, type: 3}
+  - {fileID: 8300000, guid: 0ce31c9c600d6e544b848beb54bb257c, type: 3}
   sounds_fx_debutObj:
   - {fileID: 8300000, guid: 96d8fcdc5e8177b42a44bbda69a6009d, type: 3}
   - {fileID: 8300000, guid: 9f604d2fa3979f6428cd3f3054cc6594, type: 3}

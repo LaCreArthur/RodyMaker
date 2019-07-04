@@ -37,7 +37,7 @@ public class MenuManager : MonoBehaviour {
 			GameObject image = scenes[i].transform.GetChild(0).gameObject;
 			//Debug.Log("load miniature : " + spritePath + (i+1) + ".1.png");
 			image.GetComponent<Image>().sprite = 
-			RM_SaveLoad.LoadSprite(spritePath + (i+1) + ".1.png",61,25);
+			RM_SaveLoad.LoadSprite(spritePath + (i+1) , 1, 61, 25);
             //Debug.Log(spritePath+i+".1.png");
         }
 
@@ -73,23 +73,25 @@ public class MenuManager : MonoBehaviour {
 		switch(actionToLoad) {
 			case 0: // Bouton scene
 				PlayerPrefs.SetInt("currentScene", sceneToLoad);
-				SceneManager.LoadScene(2);
+				SceneManager.LoadScene(3);
 				break;
 			case 1: // Bouton Draw
 				PlayerPrefs.SetInt("currentScene",0);
-				SceneManager.LoadScene(5);
+				SceneManager.LoadScene(6);
 				break;
 			case 2: // Bouton intro
-				LoadGame();
-				Debug.Log(gamePath);
-				Debug.Log(PlayerPrefs.GetString("gamePath"));
+				//LoadGame();
+				//Debug.Log(gamePath);
+				//Debug.Log(PlayerPrefs.GetString("gamePath"));
+				PlayerPrefs.SetInt("currentScene",0);
+				SceneManager.LoadScene(0);
 				break;
 			default: break;
 		}
 	}
 
 	private void LoadGame(){
-		string[] folderPath = StandaloneFileBrowser.OpenFolderPanel("Selectionne le dossier de ton jeu...", Application.dataPath + "\\", false);
+		string[] folderPath = StandaloneFileBrowser.OpenFolderPanel("Selectionne le dossier de ton jeu...", Application.dataPath + "/StreamingAssets", false);
 		if (folderPath.Length == 0)
         {
             return;
@@ -98,6 +100,6 @@ public class MenuManager : MonoBehaviour {
         PlayerPrefs.SetInt("customGame", 1);
 		PlayerPrefs.SetString("gamePath", gamePath);
 		Debug.Log("LoadGame (gamePath): " + gamePath);
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 	}
 }

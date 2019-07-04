@@ -19,6 +19,6 @@ public class BtnConfirm : MonoBehaviour
             synth.objLayoutScript.phonems = synth.input.text;
         }
         
-        SceneManager.UnloadSceneAsync(6);
+        SceneManager.UnloadSceneAsync(7);
     }
 }

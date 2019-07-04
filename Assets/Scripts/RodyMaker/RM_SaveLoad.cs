@@ -22,8 +22,11 @@ public static class RM_SaveLoad {
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string newPath = "";
         
+        /***
+        // chose the destination of the game folder in which the scene will be saved
+        // removed with rody collection to be more convenient for users
         if (CustomFolder == false) {
-            string[] newPaths = StandaloneFileBrowser.OpenFolderPanel("Dossier de ton jeu...", "", false);
+            string[] newPaths = StandaloneFileBrowser.OpenFolderPanel("Dossier de ton jeu...", Application.dataPath + "/StreamingAssets", false);
             if (newPaths.Length == 0){
                 Debug.Log("save canceled");
                 return;
@@ -38,7 +41,9 @@ public static class RM_SaveLoad {
         else {
             newPath = path;
         }
-
+        ***/
+        
+        newPath = path;
 
         if (scene == 0) {
             SaveSprite(gm.scenePanel.GetComponent<SpriteRenderer>().sprite.texture, newPath, "0", 320, 240);
@@ -51,11 +56,11 @@ public static class RM_SaveLoad {
         }
         
         // save the animation frames if there are set
-        Sprite[] frames = RM_ImgAnimLayout.frames;
-        if (frames.Length > 0) 
-            for (int j = 0; j<3; j++)
+        int framesCount = RM_ImgAnimLayout.frames.Count;
+        if (framesCount > 0) 
+            for (int j = 0; j < framesCount; j++)
             {
-                Sprite frame = frames[j];
+                Sprite frame = RM_ImgAnimLayout.frames[j];
                 if (frame != null)
                     SaveSprite(frame.texture, newPath, scene+"."+(j+2));
             }
@@ -254,42 +259,62 @@ public static class RM_SaveLoad {
         return newLine;
     }
 
-    public static Sprite[] LoadSceneSprites(int scene) 
+    public static List<Sprite> LoadSceneSprites(int scene) 
     {
-        Sprite[] sceneSprites = new Sprite[4];
+        List<Sprite> sceneSprites = new List<Sprite>();
 
         string path = PlayerPrefs.GetString("gamePath") + "\\";
         string spritesPath = path + "Sprites\\" + scene.ToString();
 
         Debug.Log("(LoadSceneSprites) path : " + spritesPath);
 
-        for (int i=1; i<5; i++)
+        // search the number of frames
+		DirectoryInfo dir = new DirectoryInfo(path + "Sprites\\");
+        var files = dir.GetFiles(scene + ".*.png");
+
+        for (int i = 1; i < files.Length + 1; i++) // frames index start at 1 not 0
         {
-            sceneSprites[(i-1)] = LoadSprite(spritesPath + "." + i.ToString() + ".png",320,130);
+            sceneSprites.Add(LoadSprite(spritesPath, i, 320, 130));
         }
 
         return sceneSprites;
     }
 
-    public static Sprite LoadSprite(string spritePath, int width, int height) {
+    public static Sprite LoadSprite(string spritePath, int index, int width, int height) {
         Texture2D tex = null;
         byte[] fileData;
-        
-        if (!File.Exists(spritePath)) // sprite missing or adding a new scene
+        // index == 0 means import a new sprite else load an existing one
+        string file = index == 0 ? spritePath : spritePath + "." + index.ToString() + ".png";
+
+        //Debug.Log("[LoadSprite] spritePath : " +  spritePath + ", index : " + index + ", file : " + file);
+
+        if (!File.Exists(file)) // sprite missing or adding a new scene
         {
-            Debug.Log("(LoadSprite) file does not exist : " + spritePath + ", loading base sprite instead");
-            File.Copy(PlayerPrefs.GetString("gamePath") + "\\Sprites\\base.png", spritePath);
+            if (index > 1 && index < 5) {
+                string baseFrame = spritePath + ".1.png";
+                // if frame is one of the 3 first & not exist but base do, copy base and load it
+                if (File.Exists(baseFrame))
+                    File.Copy(baseFrame, file);
+                // else load the default sprite
+                else {
+                    Debug.Log("(LoadSprite) file does not exist : " + file + ", loading base sprite instead");
+                    File.Copy(PlayerPrefs.GetString("gamePath") + "\\Sprites\\base.png", file);
+                }
+            }
+            else {
+                File.Copy(PlayerPrefs.GetString("gamePath") + "\\Sprites\\base.png", file);
+            }
         }
 
-        fileData = File.ReadAllBytes(spritePath);
+        //Debug.Log("(LoadSprite) load : " + file);
+        fileData = File.ReadAllBytes(file);
 
         tex = new Texture2D(2, 2);
         tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
         tex.filterMode = FilterMode.Point;
         RM_TextureScale.Point(tex,width,height); // resize the texture dimensions to 320*130
 
-        Sprite sprite = new Sprite();
-        sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 1f);
+        Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 1f);
         return sprite;
     }
 

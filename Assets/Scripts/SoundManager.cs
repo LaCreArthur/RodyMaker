@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     public float pitch1 = 1f, pitch2 = 1f, pitch3 = 1f;
     //[HideInInspector]
     public bool isPlaying = false, isMastico1 = false, isMastico2 = false, isMastico3 = false, isZambla = false;
+    public int currentDialIndex = 0;
 
     public void PlaySingle(AudioClip clip)
     {
@@ -72,14 +73,14 @@ public class SoundManager : MonoBehaviour
         PlayDialog(phonemeList, pitch);
     }
 
-    public void InitPhoneme(List<int> phonemes, float pitch, bool isMastico = false, bool process = true)
+    public void InitPhoneme(List<int> phonemeList, float pitch, bool isMastico = false, bool process = true)
     {
-        if (isMastico) MasticoSpeak(phonemes, process);
+        if (isMastico) MasticoSpeak(phonemeList, process);
         else
         {
             isPlaying = true;
             soundSource.pitch = pitch;
-            PlayDialog(phonemes, pitch);
+            PlayDialog(phonemeList, pitch);
         }
     }
 
@@ -88,7 +89,9 @@ public class SoundManager : MonoBehaviour
         Debug.Log("Mastico speak");
         gm.MasticoAnimator.SetBool("isSpeaking", true);
         float pitch = (isZambla)?0.9f:1.0f;
-        InitPhoneme(phonemes, pitch);
+        // make a copy of the phonemes to not consume the original liste
+        List<int> phonemeList = new List<int>(phonemes);
+        InitPhoneme(phonemeList, pitch);
         while (isPlaying)
         {
             yield return null;
@@ -104,7 +107,7 @@ public class SoundManager : MonoBehaviour
     public List<int> RandomOui()
     {
         
-        int rand = Random.Range(0, 15);
+        int rand = Random.Range(0, 19);
 
         // if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex < 6)
         //     rand = Random.Range(0, 5); 
@@ -135,23 +138,29 @@ public class SoundManager : MonoBehaviour
             case 9:
                 return StringToPhonemes("s_et_t_ai_b_i_un");
             case 10:
-                return StringToPhonemes("a a a _ i_l_et_t_ai_f_a_s_i_l_s_e_l_u_i_l_a");
+                return StringToPhonemes("a_a_a_i_l_et_t_ai_f_a_s_i_l_s_e_l_u_i_l_a");
             case 11:
                 return StringToPhonemes("f_et_l_i_s_i_t_a_s_i_on _ m_ou_s_a_y_on");
             case 12:
-                return StringToPhonemes("u_m_m_ _ t_et_b_a_l_ai_z");
+                return StringToPhonemes("u_m_m___t_et_b_a_l_ai_z");
             case 13:
-                return StringToPhonemes("ouu_i _ b_r_a_v_o _ b_i_in_j_ou_et _ s_et_b_i_in_s_a j_o_r_ai_p_a_d_i_m_i_eu f_et_l_i_s_i_t_a_s_i_on");
+                return StringToPhonemes("ouu_i__b_r_a_v_o__b_i_in_j_ou_et__s_et_b_i_in_s_a__j_o_r_ai_p_a_d_i_m_i_eu__f_et_l_i_s_i_t_a_s_i_on");
             case 14:
                 return StringToPhonemes("s_a a_l_oh_r _ c_ai_l_t_a_l_an");
             case 15:
-                return StringToPhonemes("b_r_a_v_o eu_r_eu_m l_a_ch_an_s");
+                return StringToPhonemes("l_a_ch_an_s__eu_r_eu_m__b_r_a_v_o");
+            case 16:
+                return StringToPhonemes("ouu_i _ s_et_b_i_un");
+            case 17:
+                return StringToPhonemes("b_r_a_v_o");
+            case 18:
+                return StringToPhonemes(("ouu_i _ b_i_in_j_ou_et"));
             default: return new List<int> { };
         }
     }
     public List<int> RandomNon()
     {
-        int rand = Random.Range(0, 15);
+        int rand = Random.Range(0, 16);
 
         // if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex < 6)
         //     rand = Random.Range(0, 5); 
@@ -199,7 +208,7 @@ public class SoundManager : MonoBehaviour
     public List<int> RandomPresque()
     {
         
-        int rand = Random.Range(0, 8);
+        int rand = Random.Range(0, 17);
 
         // if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex < 6)
         //     rand = Random.Range(0, 2);
@@ -241,6 +250,8 @@ public class SoundManager : MonoBehaviour
                 return StringToPhonemes("l_a_p_r_o_ch_ai_n_s_et_l_a_b_oh_n");
             case 15:
                 return StringToPhonemes("a_un_p_i_c_s_ai_l_p_r_ai_t_u_l_a_v_ai");
+            case 16:
+                return StringToPhonemes("p_r_ai_ai_ai_s c__d_o_m_a_j_");
 
             default: return new List<int> { };
         }
@@ -312,6 +323,8 @@ public class SoundManager : MonoBehaviour
             case "-": return P.bruitBlanc;
             case "ti": return P.ti;
             case "ouu": return P.ouu;
+            case "cuicui": return P.cuicui;
+            case "pop": return P.pop;
             default : return P.rienp;
         }
     }
@@ -336,6 +349,9 @@ public class SoundManager : MonoBehaviour
             case "l13" : return musics[15];
             case "l14" : return musics[16];
             case "l15" : return musics[17];
+            case "l2oiseaux" : return musics[18];
+            case "torrent" : return musics[19];
+            case "bim": return musics[20];
             default : return musics[0];
         }
     }

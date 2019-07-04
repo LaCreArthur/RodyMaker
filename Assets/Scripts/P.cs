@@ -1,5 +1,4 @@
-﻿
-public static class P {
+﻿public static class P {
   public static int rien = 0;
   public static int i = 1;
   public static int u = 2;
@@ -40,4 +39,6 @@ public static class P {
   public static int bruitBlanc = 37;
   public static int ti = 38;
   public static int ouu = 39;
+  public static int cuicui = 40;
+  public static int pop = 41;
 }

@@ -17,9 +17,9 @@ public class RM_WarningLayout : RM_Layout {
 		Debug.Log("Accept button clicked, load scene : " + newScene);
 		if (test){
 			 if (newScene == 0) // test of the title screen
-            	SceneManager.LoadScene(0);
+            	SceneManager.LoadScene(1);
         	else
-            	SceneManager.LoadScene(2);
+            	SceneManager.LoadScene(3);
 		} 
 		else if (gm.currentScene ==  newScene) { // assuming newScene > 17 because RM_SceneClick checks it
 			 // delete current scene (if saved)

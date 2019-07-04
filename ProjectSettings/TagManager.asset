@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Heart
+  - Pick Up
+  - Speed Up
+  - Obstacle
+  - Jump
+  - GroundJoin
   layers:
   - Default
   - TransparentFX
@@ -13,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - RollUI
+  - RollDefault
   - 
   - 
   - 
@@ -40,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 956662647
     locked: 0

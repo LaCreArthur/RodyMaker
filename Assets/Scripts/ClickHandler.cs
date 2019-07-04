@@ -11,7 +11,7 @@ public class ClickHandler : MonoBehaviour {
 		if (gm.clickIntro) {
 			Debug.Log ("next clicked in intro");
 			if (nextScene > PlayerPrefs.GetInt("scenesCount")) // it was the last scene, load credits, no objects to found
-				SceneManager.LoadScene(4);
+				SceneManager.LoadScene(5);
 		
 			gm.intro.sceneMusic.Stop();	
 			gm.introOver = true;
@@ -21,12 +21,12 @@ public class ClickHandler : MonoBehaviour {
 			Debug.Log ("next clicked in obj/ngp/fsw, next = " + nextScene);
             
             PlayerPrefs.SetInt("currentScene", nextScene);
-			SceneManager.LoadScene(2);
+			SceneManager.LoadScene(3);
         }
 	}
 
 	public void LaunchCredit() {
-		SceneManager.LoadScene(4);
+		SceneManager.LoadScene(5);
 	}
 
 	public void RepeatClick() {
@@ -45,7 +45,7 @@ public class ClickHandler : MonoBehaviour {
 
 	public void DrawClick() {
 		//PlayerPrefs.SetInt("scene", SceneManager.GetActiveScene().buildIndex);
-		SceneManager.LoadScene(5);
+		SceneManager.LoadScene(6);
 	}
 
 	public void ngpClick() {

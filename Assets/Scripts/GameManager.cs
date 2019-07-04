@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.IO; // DirectoryInfo
 
 public class GameManager : MonoBehaviour {
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] 
 	public AudioClip[] currentFx;
 	[HideInInspector] 
-	public Sprite[] sceneSprites;
+	public List<Sprite> sceneSprites;
 	[HideInInspector] 
 	public string currentDial,currentText,introDial1,introDial2,introDial3,objDial,ngpDial,fswDial,titleText,introText,objText,ngpText,fswText;
 	[HideInInspector]
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour {
 		}
 		else { // try to load a non existing scene
 			Debug.Log("How dare you do that !");
-			SceneManager.LoadScene(4);
+			SceneManager.LoadScene(5);
 		}
 	}
 	
@@ -126,12 +127,20 @@ public class GameManager : MonoBehaviour {
 		ReadSceneStr();
 
 		// Load Sprites
-		sceneSprites = new Sprite[4];
+		sceneSprites = new List<Sprite>();
 		sceneSprites = RM_SaveLoad.LoadSceneSprites(scene);
 		Debug.Log(sceneSprites.ToString());
 		sceneAnimator.baseFrame = sceneSprites[0];
-		// copie from 1 to 4 from sceneSprite to scene animator frame
-		Array.Copy(sceneSprites,1,sceneAnimator.frames,0,3);
+		// copie sceneSprite to scene animator frame
+		sceneAnimator.frames = new List<Sprite>(sceneSprites);
+		sceneAnimator.frames.RemoveAt(0); // remove the base image, not part of the animation
+		Debug.Log("GM : There are " + sceneAnimator.frames.Count + " animation frames in this scene");
+		// sum of the non-mastico dials
+		if (!sm.isMastico1) sceneAnimator.sumDial++;
+		if (getDial(2).Count > 0 && !sm.isMastico2) sceneAnimator.sumDial++;
+		if (getDial(6).Count > 0 && !sm.isMastico3) sceneAnimator.sumDial++;
+		sceneAnimator.firstDial = (!sm.isMastico1) ? 1 : (!sm.isMastico2) ? 2 : (!sm.isMastico3) ? 3 : -1; // index of first non mastico dial
+		Debug.Log("GM : There are " + sceneAnimator.sumDial + " people speaking, the first is : " + sceneAnimator.firstDial);
 	}
 
 	public List<int> getDial(int dial) {
@@ -201,7 +210,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyUp(KeyCode.Escape)){
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(2);
 		}
 	}
 

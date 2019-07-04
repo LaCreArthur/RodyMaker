@@ -1,10 +1,20 @@
 ﻿using SFB;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class RM_ImgAnimLayout : RM_Layout {
 
-	public static Sprite[] frames = new Sprite[3];
+	public static List<Sprite> frames = new List<Sprite>();
+    public int offset = 0;
+    public Button[] frameBtn;
+
+    public void SetActiveBtn() {
+        Debug.Log("RM_ImgAnimLayout::SetButton : frameCount = " + frames.Count);
+        for (int i=0; i<3; i++) {
+            frameBtn[i].interactable = i + offset <= frames.Count ? true: false;
+        }
+    }
 
 	public void ReturnClick(){
 		Debug.Log("Images return button clicked");
@@ -23,6 +33,11 @@ public class RM_ImgAnimLayout : RM_Layout {
         else
             return;
 
-		frames[i] = RM_SaveLoad.LoadSprite(path,320,130);
+        // i + offset <= frames.Count because it should not be possible to add the i+1 frame if the i doesn't exist
+        if ((i + offset) >= frames.Count) 
+            frames.Add(RM_SaveLoad.LoadSprite(path,0,320,130));
+		else frames[i + offset] = RM_SaveLoad.LoadSprite(path,0,320,130);
+
+        SetActiveBtn();
     }
 }

@@ -51,6 +51,9 @@ public class RM_MusicLayout : RM_Layout {
 			case 15: musicStr = "l13"; break;
 			case 16: musicStr = "l14"; break;
 			case 17: musicStr = "l15"; break;
+			case 18: musicStr = "l2oiseaux"; break;
+			case 19: musicStr = "torrent"; break;
+			case 20: musicStr = "bim"; break;
 			default: break;
 		}
 
@@ -98,6 +101,9 @@ public class RM_MusicLayout : RM_Layout {
 			case "l13" : currentDropDown.value = 15; break;
 			case "l14" : currentDropDown.value = 16; break;
 			case "l15" : currentDropDown.value = 17; break;
+			case "l2oiseaux" : currentDropDown.value = 18; break;
+			case "torrent" 	 : currentDropDown.value = 19; break;
+			case "bim" 	 	 : currentDropDown.value = 20; break;
 			default: break;
 		}
 	}

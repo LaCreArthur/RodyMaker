@@ -30,10 +30,10 @@ public class RM_MainLayout : RM_Layout
            
         // Load miniscenes
         miniScenes[0].GetComponent<Image>().sprite = 
-            RM_SaveLoad.LoadSprite(spritePath+0+".png",36,21);
+            RM_SaveLoad.LoadSprite(spritePath+0+".png",0,36,21);
 
         for (i = 1; i < PlayerPrefs.GetInt("scenesCount") + 1; i++) { 
-            Sprite miniSprite = RM_SaveLoad.LoadSprite(spritePath + (i) + ".1.png", 36, 21);
+            Sprite miniSprite = RM_SaveLoad.LoadSprite(spritePath + (i), 1, 36, 21);
             miniScenes[i].GetComponent<Image>().sprite = miniSprite;
             //miniScene.GetComponent<Image>().color = notActiveColor;
             //Debug.Log(spritePath+i+".1.png");
@@ -47,14 +47,24 @@ public class RM_MainLayout : RM_Layout
         // Load Scene sprite
         if (gm.currentScene == 0)
             gm.scenePanel.GetComponent<SpriteRenderer>().sprite = 
-                RM_SaveLoad.LoadSprite(spritePath+0+".png",320,240);
+                RM_SaveLoad.LoadSprite(spritePath+0+".png",0,320,240);
         else {
             gm.scenePanel.GetComponent<SpriteRenderer>().sprite = 
-                RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene)+".1.png",320,130);
+                RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene),1,320,130);
+            
             // Load animations frames
-            for (i = 0; i < 3; ++i)
-			    RM_ImgAnimLayout.frames[i] = 
-                    RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene)+"."+ (i+2) +".png",320,130);
+            DirectoryInfo dir = new DirectoryInfo(spritePath);
+            var files = dir.GetFiles(gm.currentScene + ".*.png");
+            gm.framesCount = files.Length - 1; // - 1 because the x.1.png is not part of the animation
+            //Debug.Log("there are " + files.Length + " sprites for the scene " + gm.currentScene);
+            
+            // reset frame List
+		    RM_ImgAnimLayout.frames.Clear();
+            
+            // add the scene frames
+            for (i = 0; i < gm.framesCount; ++i) {
+			    RM_ImgAnimLayout.frames.Add(RM_SaveLoad.LoadSprite(spritePath+(gm.currentScene), i+2, 320, 130));
+            }
         }
     }
 

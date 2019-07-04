@@ -7,7 +7,7 @@ public class vanillaCursor : MonoBehaviour {
     public Texture2D cursorTexture_32;
     public Texture2D cursorTexture_64;
     private CursorMode cursorMode = CursorMode.ForceSoftware;
-    private Vector2 hotSpot;
+    public Vector2 hotSpot;
 
 	void Start () {
 		hotSpot = new Vector2(0, 0);
@@ -15,6 +15,7 @@ public class vanillaCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Screen.width < 480) // 320*200
 		{
 			Cursor.SetCursor(cursorTexture_16, hotSpot, cursorMode);

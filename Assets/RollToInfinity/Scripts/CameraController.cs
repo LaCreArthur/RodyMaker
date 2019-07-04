@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.PostProcessing;
+﻿using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 ///<summary>
 /// Script to controle the camera and the postprocess attached to it
@@ -18,13 +15,12 @@ public class CameraController : MonoBehaviour {
 
 	public float rotationX;
 	public Vector2 sceneSize;
-	PostProcessingBehaviour postProcess;
+	public PostProcessVolume postProcess;
 	Vector3 offset;
 
 	
 	void Start () {
 		offset = transform.position - player.transform.position;
-		postProcess = GetComponent<PostProcessingBehaviour>();
 	}
 
 
@@ -38,9 +34,8 @@ public class CameraController : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(transform.rotation, newRot, Time.deltaTime * smooth);
 
 		// Update the post processing hueShift
-		ColorGradingModel.Settings colorsettings = postProcess.profile.colorGrading.settings;
-		colorsettings.basic.hueShift += Time.deltaTime * colorSpeed;
-		postProcess.profile.colorGrading.settings = colorsettings;
+		postProcess.profile.TryGetSettings(out ColorGrading colorGradingLayer);
+		colorGradingLayer.hueShift.value += Time.deltaTime * colorSpeed;
 	}
 
 }

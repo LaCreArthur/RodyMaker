@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
-using UnityEngine.PostProcessing;
 using UnityEngine.UI;
 
 ///<summary>
@@ -61,7 +60,7 @@ public class RollGameManager : MonoBehaviour {
 	}
 	
 	float levelPlayerPos = 0.0f;
-	PostProcessingBehaviour postProcess;
+	public PostProcessVolume postProcess;
 	PlayerController pc;
 	float distanceToNextLvl = 1.0f;
 	AudioSource audioSource;
@@ -76,10 +75,7 @@ public class RollGameManager : MonoBehaviour {
 
 	void Start() {
 		pc = player.GetComponent<PlayerController>();
-		
-		// the camera post process is needed to darken the game when it is in Pause mode
-		postProcess = rollCamera.GetComponent<PostProcessingBehaviour>();
-		
+
 		// display the starting menu at the beginning
 		menuCanvas.SetActive(true);
 		// Menu color fade
@@ -159,9 +155,10 @@ public class RollGameManager : MonoBehaviour {
 	}
 
 	void FadeColor(float fade) {
-		ColorGradingModel.Settings colorsettings = postProcess.profile.colorGrading.settings;
-		colorsettings.tonemapping.neutralBlackIn = fade;
-		postProcess.profile.colorGrading.settings = colorsettings;
+		
+		// Update the post processing hueShift
+		postProcess.profile.TryGetSettings(out ColorGrading colorGradingLayer);
+		colorGradingLayer.tint.value = fade;
 	}
 	void ContinueGame() {
 		player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

@@ -1325,3 +1325,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -2123763529012539985}
+  - {fileID: 3581726798669428396}
+--- !u!114 &3581726798669428396
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3b08ccecb6885419504de69d71e66b, type: 3}
+  m_Name: Pixelationv2
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  BlockCount:
+    overrideState: 0
+    value: 128

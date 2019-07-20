@@ -1,0 +1,5 @@
+newmtl Jump
+map_Kd metalBoxJump_texture.jpg
+Kd 0.4165765 0.8455882 0.6325617
+d 1
+

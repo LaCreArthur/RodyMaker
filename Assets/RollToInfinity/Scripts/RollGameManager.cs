@@ -25,7 +25,7 @@ public class RollGameManager : MonoBehaviour {
 	// hearts are represented by a scrollbar using a heart sprite in tiled mode
 	public Scrollbar sb_healthPoints;
 	public Button startButton;
-	public Text scoreText, lvlText, speedText, title, finalScore, currentLevel, sensitivityText;
+	public Text scoreText, lvlText, speedText, title, finalScore, currentLevel, sensitivityText, instructionText;
 	public int score;
 	public AudioClip clip_levelup, clip_gameOver;
 	public Camera rollCamera;
@@ -40,7 +40,7 @@ public class RollGameManager : MonoBehaviour {
 			Debug.Log("level is set to " + value);
 			
 			// Logarithmically increase speed through levels
-			pc.speed = pc.startingSpeed + Mathf.Log(value) * pc.startingSpeed;
+			pc.speed = pc.startingSpeed + Mathf.Log(value) * pc.startingSpeed / 2;
 			Debug.Log("player speed is set to " + pc.speed);
 			
 			// keep the level min speed 
@@ -141,6 +141,7 @@ public class RollGameManager : MonoBehaviour {
 		FadeColor(0.05f);
 		// display the level with fading effect
 		StartCoroutine(FadeInOutText(1f, lvlText));
+		StartCoroutine(FadeInOutText(1f, instructionText));
 		// Set menu for ingame pause
 		title.text = "ROLL TO INFINITY";
 		finalScore.text = "";
@@ -198,7 +199,7 @@ public class RollGameManager : MonoBehaviour {
 			finalScore.text = "SCORE : " + score;
 			// update the slider to the current level
 			sliderLvl.value = level;
-			currentLevel.text = "LEVEL " + level;
+			currentLevel.text = "LEVEL: " + level;
 			// player can change the level
 			sliderLvl.interactable = true;
 			// open the menu
@@ -224,12 +225,12 @@ public class RollGameManager : MonoBehaviour {
 
 	public void OnSliderChange() {
 		Level = (int)sliderLvl.value;
-		currentLevel.text = "LEVEL " + level;
+		currentLevel.text = "LEVEL: " + level;
 	}
 	
 	public void OnSensitivityChange() {
 		pc.sensitivity = sliderSensitivity.value;
-		sensitivityText.text = "SENSITIVITY : " + sliderSensitivity.value;
+		sensitivityText.text = "SENSITIVITY: " + sliderSensitivity.value;
 	}
 
 	public void OnClickExit() {

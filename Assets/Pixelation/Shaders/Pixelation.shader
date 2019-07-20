@@ -1,34 +1,32 @@
-﻿Shader "Hidden/Custom/Pixelation"
+﻿Shader "Hidden/Pixelation"
 {
-	HLSLINCLUDE
-
-#include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
-		TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
-
-	float2 BlockCount;
-	float2 BlockSize;
-
-	float4 Frag(VaryingsDefault i) : SV_Target
+	Properties
 	{
-		float2 blockPos = floor(i.texcoord * BlockCount);
-		float2 blockCenter = blockPos * BlockSize + BlockSize * 0.5;
-
-		float4 tex = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, blockCenter);
-		return tex;
+		_MainTex ("Texture", 2D) = "white" {}
 	}
-
-		ENDHLSL
-
-		SubShader
+	SubShader
 	{
-		Cull Off ZWrite Off ZTest Always
-
-			Pass
+		Pass
 		{
-			HLSLPROGRAM
-				#pragma vertex VertDefault
-				#pragma fragment Frag
-			ENDHLSL
+			CGPROGRAM
+			#pragma vertex vert_img
+			#pragma fragment frag
+			
+			#include "UnityCG.cginc"
+
+			sampler2D _MainTex;	
+			float2 BlockCount;
+			float2 BlockSize;
+
+			fixed4 frag (v2f_img i) : SV_Target
+			{
+				float2 blockPos = floor(i.uv * BlockCount);
+				float2 blockCenter = blockPos * BlockSize + BlockSize * 0.5;
+
+				float4 tex = tex2D(_MainTex, blockCenter);
+				return tex;
+			}
+			ENDCG
 		}
 	}
 }

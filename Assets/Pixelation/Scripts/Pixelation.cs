@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Assets.Pixelation.Scripts
 {
-    //[ExecuteInEditMode]
+    [ExecuteInEditMode]
     [AddComponentMenu("Image Effects/Color Adjustments/Pixelation")]
     public class Pixelation : ImageEffectBase
     {
-        [Range(1.0f, 512.0f)] public float BlockCount = 128;
+        [Range(64.0f, 512.0f)] public float BlockCount = 128;
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
         {

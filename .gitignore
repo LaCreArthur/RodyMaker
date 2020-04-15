@@ -109,3 +109,4 @@ $RECYCLE.BIN/
 
 # studio code files
 .vscode/
+/Assets/UnityReusables/

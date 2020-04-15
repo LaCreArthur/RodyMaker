@@ -22,5 +22,4 @@ public class RA_Menu : MonoBehaviour {
 
 		}
 	}
-
 }

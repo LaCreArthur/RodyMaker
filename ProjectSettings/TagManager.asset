@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Heart
-  - Pick Up
-  - Speed Up
-  - Obstacle
-  - Jump
-  - GroundJoin
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -19,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - RollUI
-  - RollDefault
-  - RollPostProcess
-  - RollNoColorGradient
-  - 
-  - 
+  - PostProcessing
+  - Enemies
+  - FirstPersonWeapon
+  - Player
+  - Walkable
+  - Pickups
   - 
   - 
   - 
@@ -44,9 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 788040023
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
-    uniqueID: 956662647
+  - name: Foreground
+    uniqueID: 3922283465
     locked: 0

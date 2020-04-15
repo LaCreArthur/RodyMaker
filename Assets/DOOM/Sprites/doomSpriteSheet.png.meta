@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 29d2b8ea798137d4889f1d31b728b573
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5780887144210477478
+    second: doomSpriteSheet_Gun-Idle
+  - first:
+      213: 6989449476052004789
+    second: doomSpriteSheet_Gun-Fire1
+  - first:
+      213: -2854064772655312623
+    second: doomSpriteSheet_Gun-Fire2
+  - first:
+      213: 7875595998298249374
+    second: doomSpriteSheet_Gun-Fire3
+  - first:
+      213: -7268270917949056896
+    second: doomSpriteSheet_Potion1
+  - first:
+      213: 5592633134144122921
+    second: doomSpriteSheet_Potion2
+  - first:
+      213: 3282058006798135339
+    second: doomSpriteSheet_Potion3
+  - first:
+      213: 3908835415975209263
+    second: doomSpriteSheet_Potion4
+  - first:
+      213: -7127218776643130060
+    second: doomSpriteSheet_BlueCard1
+  - first:
+      213: -6446501547201952984
+    second: doomSpriteSheet_BlueCard2
+  - first:
+      213: -2468052144626429162
+    second: doomSpriteSheet_Gun-MuzzleFlash
+  - first:
+      213: -263478571111507437
+    second: doomSpriteSheet_Gun-NoAmmo
+  - first:
+      213: 7308598328064217569
+    second: doomSpriteSheet_Enemy1-Walk1
+  - first:
+      213: 5807048034859970232
+    second: doomSpriteSheet_Enemy1-Walk2
+  - first:
+      213: -1691496890050091188
+    second: doomSpriteSheet_Enemy1-Walk3
+  - first:
+      213: -4653615388470132717
+    second: doomSpriteSheet_Enemy1-Walk4
+  - first:
+      213: 4125455741412061828
+    second: doomSpriteSheet_Enemy1-Idle
+  - first:
+      213: 8503391420257329288
+    second: doomSpriteSheet_Enemy1-Shoot
+  - first:
+      213: 346806509940922596
+    second: doomSpriteSheet_Enemy1-Death1
+  - first:
+      213: -1236466261329311332
+    second: doomSpriteSheet_Enemy1-Death2
+  - first:
+      213: 7786810637633608145
+    second: doomSpriteSheet_Enemy1-Death3
+  - first:
+      213: -7403991042408639993
+    second: doomSpriteSheet_Enemy1-Death4
+  - first:
+      213: -3707494991235685105
+    second: doomSpriteSheet_Enemy1-Death5
+  - first:
+      213: 6919098802211726594
+    second: doomSpriteSheet_Enemy1-Death6
+  - first:
+      213: 6961198645822412665
+    second: doomSpriteSheet_Enemy1-Remain
+  - first:
+      213: 703944224837247462
+    second: doomSpriteSheet_shotgun-idle
+  - first:
+      213: -6025313266392530650
+    second: doomSpriteSheet_shotgun-fire1
+  - first:
+      213: 7733521745175659852
+    second: doomSpriteSheet_shotgun-fire2
+  - first:
+      213: 4183948515832114290
+    second: doomSpriteSheet_shotgun-fire3
+  - first:
+      213: 1851374539445329727
+    second: doomSpriteSheet_shotgun-muzzleFlash1
+  - first:
+      213: 2259970764434530611
+    second: doomSpriteSheet_shotgun-muzzleFlash2
+  - first:
+      213: 554494919901683605
+    second: doomSpriteSheet_Shotgun-Props
+  - first:
+      213: -8724866500727664516
+    second: doomSpriteSheet_Pistol-Props
+  - first:
+      213: -4305657377653793882
+    second: doomSpriteSheet_Megagun-Props
+  - first:
+      213: -1794638026660028363
+    second: doomSpriteSheet_ammo-ShotGun-small
+  - first:
+      213: 6253869993768666506
+    second: doomSpriteSheet_ammo-ShotGun-large
+  - first:
+      213: -8210697875081074915
+    second: doomSpriteSheet_ammo-Pistol-large
+  - first:
+      213: -3736886664693259355
+    second: doomSpriteSheet_ammo-Pistol-Small
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-Idle
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 978
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e46b255c926cfa0800000000000000
+      internalID: -5780887144210477478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-Fire1
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 978
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bfae9b44438ff060800000000000000
+      internalID: 6989449476052004789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-Fire2
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 978
+        width: 66
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1119ce3f5335468d0800000000000000
+      internalID: -2854064772655312623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-Fire3
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 978
+        width: 61
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e981e0175dcbb4d60800000000000000
+      internalID: 7875595998298249374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Potion1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 751
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088185ceb1ae12b90800000000000000
+      internalID: -7268270917949056896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Potion2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 751
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9207db754360d9d40800000000000000
+      internalID: 5592633134144122921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Potion3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 751
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20fd6b3e563c8d20800000000000000
+      internalID: 3282058006798135339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Potion4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 751
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f292ba6d919fe3630800000000000000
+      internalID: 3908835415975209263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_BlueCard1
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 713
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d21b5c848071d90800000000000000
+      internalID: -7127218776643130060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_BlueCard2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 713
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82385037ffc6986a0800000000000000
+      internalID: -6446501547201952984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-MuzzleFlash
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1043
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613966896a7bfbdd0800000000000000
+      internalID: -2468052144626429162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Gun-NoAmmo
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 978
+        width: 78
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a98f2b2afe75cf0800000000000000
+      internalID: -263478571111507437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Walk1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1307
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1184ee47b5d6560800000000000000
+      internalID: 7308598328064217569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Walk2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1307
+        width: 35
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be657fab67c69050800000000000000
+      internalID: 5807048034859970232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Walk3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1307
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47e2e95a889688e0800000000000000
+      internalID: -1691496890050091188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Walk4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1307
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31042f8c5790b6fb0800000000000000
+      internalID: -4653615388470132717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Idle
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1305
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4823673a320904930800000000000000
+      internalID: 4125455741412061828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Shoot
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1305
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880ea8e917d120670800000000000000
+      internalID: 8503391420257329288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1305
+        width: 31
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e852deeeaa10d400800000000000000
+      internalID: 346806509940922596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1305
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9906b48c7037dee0800000000000000
+      internalID: -1236466261329311332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1305
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d95265c40f401c60800000000000000
+      internalID: 7786810637633608145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1305
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7021f0dff5dbf3990800000000000000
+      internalID: -7403991042408639993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death5
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1305
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f056bd8d2f45c8cc0800000000000000
+      internalID: -3707494991235685105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Death6
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1305
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20529af93b3950060800000000000000
+      internalID: 6919098802211726594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Enemy1-Remain
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1305
+        width: 52
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977dc2f49452b9060800000000000000
+      internalID: 6961198645822412665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-idle
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 978
+        width: 79
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1ac17fa89e4c900800000000000000
+      internalID: 703944224837247462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-fire1
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 978
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6218938f189c16ca0800000000000000
+      internalID: -6025313266392530650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-fire2
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 978
+        width: 87
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4544f3ad0df25b60800000000000000
+      internalID: 7733521745175659852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-fire3
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 978
+        width: 113
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c22b4f10f501a30800000000000000
+      internalID: 4183948515832114290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-muzzleFlash1
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1085
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f57d9a55761b910800000000000000
+      internalID: 1851374539445329727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_shotgun-muzzleFlash2
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 1085
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33163e8bf670d5f10800000000000000
+      internalID: 2259970764434530611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Shotgun-Props
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 781
+        width: 63
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f9f7a1136f1b700800000000000000
+      internalID: 554494919901683605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Pistol-Props
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 784
+        width: 63
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c701c67d42c0be680800000000000000
+      internalID: -8724866500727664516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_Megagun-Props
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 789
+        width: 63
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abd7686d6b3f34c0800000000000000
+      internalID: -4305657377653793882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_ammo-ShotGun-small
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 717
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5306580293a2817e0800000000000000
+      internalID: -1794638026660028363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_ammo-ShotGun-large
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 714
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a854e0aff953ac650800000000000000
+      internalID: 6253869993768666506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_ammo-Pistol-large
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 710
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17ecb5e8cdbd0e80800000000000000
+      internalID: -8210697875081074915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doomSpriteSheet_ammo-Pistol-Small
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 715
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a360199069e32cc0800000000000000
+      internalID: -3736886664693259355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 24636f82dd95ff24385db1d39a591d5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1856 @@
+fileFormatVersion: 2
+guid: e4e9e49404628fc479989ce4bc0119e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 100196523195007719
+    second: Mastico_SpriteSheet_0
+  - first:
+      213: 8830950599453490255
+    second: Mastico_SpriteSheet_1
+  - first:
+      213: -2726280227107867234
+    second: Mastico_SpriteSheet_2
+  - first:
+      213: 6681154443118485812
+    second: Mastico_SpriteSheet_3
+  - first:
+      213: 122071242808216131
+    second: Mastico_SpriteSheet_4
+  - first:
+      213: -1521819646581920363
+    second: Mastico_SpriteSheet_5
+  - first:
+      213: 7954783661910042369
+    second: Mastico_SpriteSheet_6
+  - first:
+      213: -3608865481545402258
+    second: Mastico_SpriteSheet_7
+  - first:
+      213: -1787555580199203590
+    second: Mastico_SpriteSheet_8
+  - first:
+      213: -7933913085876643210
+    second: Mastico_SpriteSheet_9
+  - first:
+      213: 3398949244994521607
+    second: Mastico_SpriteSheet_10
+  - first:
+      213: -6991525195503285188
+    second: Mastico_SpriteSheet_11
+  - first:
+      213: 7140654665063742758
+    second: Mastico_SpriteSheet_12
+  - first:
+      213: -4467787677620996958
+    second: Mastico_SpriteSheet_13
+  - first:
+      213: 4035965562349339350
+    second: Mastico_SpriteSheet_14
+  - first:
+      213: 1726625293792637770
+    second: Mastico_SpriteSheet_15
+  - first:
+      213: -4458407316140826510
+    second: Mastico_SpriteSheet_16
+  - first:
+      213: 8605283820662818232
+    second: Mastico_SpriteSheet_17
+  - first:
+      213: -5201831096163588417
+    second: Mastico_SpriteSheet_18
+  - first:
+      213: 6779842115026691416
+    second: Mastico_SpriteSheet_19
+  - first:
+      213: -20110826080348229
+    second: Mastico_SpriteSheet_20
+  - first:
+      213: 496168230073026008
+    second: Mastico_SpriteSheet_21
+  - first:
+      213: -2912614625153872410
+    second: Mastico_SpriteSheet_22
+  - first:
+      213: 2007664327858214657
+    second: Mastico_SpriteSheet_23
+  - first:
+      213: -4469810978888581304
+    second: Mastico_SpriteSheet_24
+  - first:
+      213: 3993017890327700909
+    second: Mastico_SpriteSheet_25
+  - first:
+      213: 635517084820418710
+    second: Mastico_SpriteSheet_26
+  - first:
+      213: 3804110623318264340
+    second: Mastico_SpriteSheet_27
+  - first:
+      213: 6863078887869313462
+    second: Mastico_SpriteSheet_28
+  - first:
+      213: -8961184391199499983
+    second: Mastico_SpriteSheet_29
+  - first:
+      213: -8100575311134442730
+    second: Mastico_SpriteSheet_30
+  - first:
+      213: -607982577763855534
+    second: Mastico_SpriteSheet_31
+  - first:
+      213: 3993126545155872921
+    second: Mastico_SpriteSheet_32
+  - first:
+      213: -8663282256070645587
+    second: Mastico_SpriteSheet_33
+  - first:
+      213: 2300334043065310787
+    second: Mastico_SpriteSheet_34
+  - first:
+      213: 3651040508414438788
+    second: Mastico_SpriteSheet_35
+  - first:
+      213: -2414307257696853263
+    second: Mastico_SpriteSheet_36
+  - first:
+      213: -3966605375045852602
+    second: Mastico_SpriteSheet_37
+  - first:
+      213: 5987573302622206881
+    second: Mastico_SpriteSheet_38
+  - first:
+      213: 187157559833418305
+    second: Mastico_SpriteSheet_39
+  - first:
+      213: 8826524078513109602
+    second: Mastico_SpriteSheet_40
+  - first:
+      213: 824516634762196558
+    second: Mastico_SpriteSheet_41
+  - first:
+      213: -868708821915720453
+    second: Mastico_SpriteSheet_42
+  - first:
+      213: -1288306849568545701
+    second: Mastico_SpriteSheet_43
+  - first:
+      213: 5202651445717409891
+    second: Mastico_SpriteSheet_44
+  - first:
+      213: 2502411641383710920
+    second: Mastico_SpriteSheet_45
+  - first:
+      213: -872722875382865072
+    second: Mastico_SpriteSheet_46
+  - first:
+      213: -54032975735623905
+    second: Mastico_SpriteSheet_47
+  - first:
+      213: -4200860070691692690
+    second: Mastico_SpriteSheet_48
+  - first:
+      213: 6972796517653339674
+    second: Mastico_SpriteSheet_49
+  - first:
+      213: -3738943738236679491
+    second: Mastico_SpriteSheet_50
+  - first:
+      213: -6341264619887126363
+    second: Mastico_SpriteSheet_51
+  - first:
+      213: -1034379145752895832
+    second: Mastico_SpriteSheet_52
+  - first:
+      213: 5662777708916039996
+    second: Mastico_SpriteSheet_53
+  - first:
+      213: -2668881856486477007
+    second: Mastico_SpriteSheet_54
+  - first:
+      213: -7441674810329904879
+    second: Mastico_SpriteSheet_55
+  - first:
+      213: 984351742956030318
+    second: Mastico_SpriteSheet_56
+  - first:
+      213: -3965172476660831159
+    second: Mastico_SpriteSheet_57
+  - first:
+      213: -3408771028859864531
+    second: Mastico_SpriteSheet_58
+  - first:
+      213: 3488762396989981179
+    second: Mastico_SpriteSheet_59
+  - first:
+      213: 4479404444344282079
+    second: Mastico_SpriteSheet_60
+  - first:
+      213: 424350040659657946
+    second: Mastico_SpriteSheet_61
+  - first:
+      213: 1771643125879751348
+    second: Mastico_SpriteSheet_62
+  - first:
+      213: -4011531599600912882
+    second: Mastico_SpriteSheet_63
+  - first:
+      213: -883808579647622754
+    second: Mastico_SpriteSheet_64
+  - first:
+      213: -7424494319738193288
+    second: Mastico_SpriteSheet_65
+  - first:
+      213: -8967561685749367651
+    second: Mastico_SpriteSheet_66
+  - first:
+      213: -428498488273156862
+    second: Mastico_SpriteSheet_67
+  - first:
+      213: 5058805441026861921
+    second: Mastico_SpriteSheet_68
+  - first:
+      213: 536433806939383420
+    second: Mastico_SpriteSheet_69
+  - first:
+      213: 6491394638429609536
+    second: Mastico_SpriteSheet_70
+  - first:
+      213: -6861157632330774246
+    second: Mastico_SpriteSheet_71
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e284ccf438f36100800000000000000
+      internalID: 100196523195007719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4cb27528c6dd8a70800000000000000
+      internalID: 8830950599453490255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e957011f39e4a2ad0800000000000000
+      internalID: -2726280227107867234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431a997519a38bc50800000000000000
+      internalID: 6681154443118485812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34acfd8062fa1b100800000000000000
+      internalID: 122071242808216131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d2649281961eae0800000000000000
+      internalID: -1521819646581920363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107aa312891156e60800000000000000
+      internalID: 7954783661910042369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68315217fbbaedc0800000000000000
+      internalID: -3608865481545402258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc85f1bba35137e0800000000000000
+      internalID: -1787555580199203590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67adf75851415e190800000000000000
+      internalID: -7933913085876643210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a0b75745e7b2f20800000000000000
+      internalID: 3398949244994521607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 160
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c45db90ec19fe90800000000000000
+      internalID: -6991525195503285188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d3cd6c593b81360800000000000000
+      internalID: 7140654665063742758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4788f47ca3ff1c0800000000000000
+      internalID: -4467787677620996958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2ca85ab41a20830800000000000000
+      internalID: 4035965562349339350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43f6b08e8436f710800000000000000
+      internalID: 1726625293792637770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2706c69ea2e8022c0800000000000000
+      internalID: -4458407316140826510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5060aca0c1c6770800000000000000
+      internalID: 8605283820662818232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6a693bd226fc7b0800000000000000
+      internalID: -5201831096163588417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85526638b76d61e50800000000000000
+      internalID: 6779842115026691416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7575b6f4d88bff0800000000000000
+      internalID: -20110826080348229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5465e506eb2e600800000000000000
+      internalID: 496168230073026008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed881c1e605497d0800000000000000
+      internalID: -2912614625153872410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 128
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1075632b118acdb10800000000000000
+      internalID: 2007664327858214657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f7436c89a08f1c0800000000000000
+      internalID: -4469810978888581304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da523c68d9c0a6730800000000000000
+      internalID: 3993017890327700909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690b969eb6fc1d800800000000000000
+      internalID: 635517084820418710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41acc25f47aeac430800000000000000
+      internalID: 3804110623318264340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b1fee8e2ed8e3f50800000000000000
+      internalID: 6863078887869313462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13957cb464a73a380800000000000000
+      internalID: -8961184391199499983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b38875ca9f49f80800000000000000
+      internalID: -8100575311134442730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25352c611130097f0800000000000000
+      internalID: -607982577763855534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998d233bf6f6a6730800000000000000
+      internalID: 3993126545155872921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8e6f920b6d5c780800000000000000
+      internalID: -8663282256070645587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e55addf9d6cef10800000000000000
+      internalID: 2300334043065310787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 96
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48daa949ff91ba230800000000000000
+      internalID: 3651040508414438788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2e4563758ae7ed0800000000000000
+      internalID: -2414307257696853263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642ac386d69c3f8c0800000000000000
+      internalID: -3966605375045852602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abb869f132281350800000000000000
+      internalID: 5987573302622206881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a56ee1fcae89200800000000000000
+      internalID: 187157559833418305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ab43d62ec1e7a70800000000000000
+      internalID: 8826524078513109602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46b666c285417b00800000000000000
+      internalID: 824516634762196558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf42778dde9b1f3f0800000000000000
+      internalID: -868708821915720453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54a3cdfeb30f1ee0800000000000000
+      internalID: -1288306849568545701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360a820dce7833840800000000000000
+      internalID: 5202651445717409891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c07a76212a5ab220800000000000000
+      internalID: 2502411641383710920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05362713b2773e3f0800000000000000
+      internalID: -872722875382865072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fee1b7b49004ff0800000000000000
+      internalID: -54032975735623905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f9c47d50c83b5c0800000000000000
+      internalID: -4200860070691692690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1edec54d7954c060800000000000000
+      internalID: 6972796517653339674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba4b37da7a9c1cc0800000000000000
+      internalID: -3738943738236679491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a810e8fc6d4ff7a0800000000000000
+      internalID: -6341264619887126363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae9356b5a525a1f0800000000000000
+      internalID: -1034379145752895832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31e0f5d25a369e40800000000000000
+      internalID: 5662777708916039996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13373a4871a36fad0800000000000000
+      internalID: -2668881856486477007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119405c003cd9b890800000000000000
+      internalID: -7441674810329904879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e694ee4e1be19ad00800000000000000
+      internalID: 984351742956030318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ca97f04a0e8f8c0800000000000000
+      internalID: -3965172476660831159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a3a284fcc91b0d0800000000000000
+      internalID: -3408771028859864531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf104527ae29a6030800000000000000
+      internalID: 3488762396989981179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb6276fb9a0a2e30800000000000000
+      internalID: 4479404444344282079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad401f91d1893e500800000000000000
+      internalID: 424350040659657946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b243d25904269810800000000000000
+      internalID: 1771643125879751348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e067880a34d2458c0800000000000000
+      internalID: -4011531599600912882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9139a887c41cb3f0800000000000000
+      internalID: -883808579647622754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a791bb0c5e6f890800000000000000
+      internalID: -7424494319738193288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c7183b822dc8380800000000000000
+      internalID: -8967561685749367651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205cfab25eaad0af0800000000000000
+      internalID: -428498488273156862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b2834febc743640800000000000000
+      internalID: 5058805441026861921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76e12c84bbc17700800000000000000
+      internalID: 536433806939383420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ed870e701161a50800000000000000
+      internalID: 6491394638429609536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mastico_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19c6f04c7548c0a0800000000000000
+      internalID: -6861157632330774246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 07210619d99476f489f256c4ed772fbf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

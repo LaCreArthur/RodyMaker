@@ -110,3 +110,4 @@ $RECYCLE.BIN/
 # studio code files
 .vscode/
 /Assets/UnityReusables/
+/Assets/DOOM/Externals/

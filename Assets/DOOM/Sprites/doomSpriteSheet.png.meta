@@ -117,7 +117,7 @@ TextureImporter:
       213: -3736886664693259355
     second: doomSpriteSheet_ammo-Pistol-Small
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -134,9 +134,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -146,11 +149,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -168,10 +171,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -183,6 +191,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -195,6 +204,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -207,6 +217,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -219,6 +230,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1032,9 +1057,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      doomSpriteSheet_BlueCard1: -7127218776643130060
+      doomSpriteSheet_BlueCard2: -6446501547201952984
+      doomSpriteSheet_Enemy1-Death1: 346806509940922596
+      doomSpriteSheet_Enemy1-Death2: -1236466261329311332
+      doomSpriteSheet_Enemy1-Death3: 7786810637633608145
+      doomSpriteSheet_Enemy1-Death4: -7403991042408639993
+      doomSpriteSheet_Enemy1-Death5: -3707494991235685105
+      doomSpriteSheet_Enemy1-Death6: 6919098802211726594
+      doomSpriteSheet_Enemy1-Idle: 4125455741412061828
+      doomSpriteSheet_Enemy1-Remain: 6961198645822412665
+      doomSpriteSheet_Enemy1-Shoot: 8503391420257329288
+      doomSpriteSheet_Enemy1-Walk1: 7308598328064217569
+      doomSpriteSheet_Enemy1-Walk2: 5807048034859970232
+      doomSpriteSheet_Enemy1-Walk3: -1691496890050091188
+      doomSpriteSheet_Enemy1-Walk4: -4653615388470132717
+      doomSpriteSheet_Gun-Fire1: 6989449476052004789
+      doomSpriteSheet_Gun-Fire2: -2854064772655312623
+      doomSpriteSheet_Gun-Fire3: 7875595998298249374
+      doomSpriteSheet_Gun-Idle: -5780887144210477478
+      doomSpriteSheet_Gun-MuzzleFlash: -2468052144626429162
+      doomSpriteSheet_Gun-NoAmmo: -263478571111507437
+      doomSpriteSheet_Megagun-Props: -4305657377653793882
+      doomSpriteSheet_Pistol-Props: -8724866500727664516
+      doomSpriteSheet_Potion1: -7268270917949056896
+      doomSpriteSheet_Potion2: 5592633134144122921
+      doomSpriteSheet_Potion3: 3282058006798135339
+      doomSpriteSheet_Potion4: 3908835415975209263
+      doomSpriteSheet_Shotgun-Props: 554494919901683605
+      doomSpriteSheet_ammo-Pistol-Small: -3736886664693259355
+      doomSpriteSheet_ammo-Pistol-large: -8210697875081074915
+      doomSpriteSheet_ammo-ShotGun-large: 6253869993768666506
+      doomSpriteSheet_ammo-ShotGun-small: -1794638026660028363
+      doomSpriteSheet_shotgun-fire1: -6025313266392530650
+      doomSpriteSheet_shotgun-fire2: 7733521745175659852
+      doomSpriteSheet_shotgun-fire3: 4183948515832114290
+      doomSpriteSheet_shotgun-idle: 703944224837247462
+      doomSpriteSheet_shotgun-muzzleFlash1: 1851374539445329727
+      doomSpriteSheet_shotgun-muzzleFlash2: 2259970764434530611
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

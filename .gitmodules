@@ -1,0 +1,3 @@
+[submodule "Assets/UnityReusables"]
+	path = Assets/UnityReusables
+	url = https://github.com/LaCreArthur/Unity-Reusables-Old.git

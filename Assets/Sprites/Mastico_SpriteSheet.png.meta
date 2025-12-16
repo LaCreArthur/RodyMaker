@@ -219,7 +219,7 @@ TextureImporter:
       213: 21300142
     second: Mastico_SpriteSheet_71
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -236,9 +236,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -249,7 +252,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 16
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -270,10 +273,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -285,6 +293,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -297,6 +306,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -309,6 +319,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -1836,9 +1873,81 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Mastico_SpriteSheet_0: 21300000
+      Mastico_SpriteSheet_1: 21300002
+      Mastico_SpriteSheet_10: 21300020
+      Mastico_SpriteSheet_11: 21300022
+      Mastico_SpriteSheet_12: 21300024
+      Mastico_SpriteSheet_13: 21300026
+      Mastico_SpriteSheet_14: 21300028
+      Mastico_SpriteSheet_15: 21300030
+      Mastico_SpriteSheet_16: 21300032
+      Mastico_SpriteSheet_17: 21300034
+      Mastico_SpriteSheet_18: 21300036
+      Mastico_SpriteSheet_19: 21300038
+      Mastico_SpriteSheet_2: 21300004
+      Mastico_SpriteSheet_20: 21300040
+      Mastico_SpriteSheet_21: 21300042
+      Mastico_SpriteSheet_22: 21300044
+      Mastico_SpriteSheet_23: 21300046
+      Mastico_SpriteSheet_24: 21300048
+      Mastico_SpriteSheet_25: 21300050
+      Mastico_SpriteSheet_26: 21300052
+      Mastico_SpriteSheet_27: 21300054
+      Mastico_SpriteSheet_28: 21300056
+      Mastico_SpriteSheet_29: 21300058
+      Mastico_SpriteSheet_3: 21300006
+      Mastico_SpriteSheet_30: 21300060
+      Mastico_SpriteSheet_31: 21300062
+      Mastico_SpriteSheet_32: 21300064
+      Mastico_SpriteSheet_33: 21300066
+      Mastico_SpriteSheet_34: 21300068
+      Mastico_SpriteSheet_35: 21300070
+      Mastico_SpriteSheet_36: 21300072
+      Mastico_SpriteSheet_37: 21300074
+      Mastico_SpriteSheet_38: 21300076
+      Mastico_SpriteSheet_39: 21300078
+      Mastico_SpriteSheet_4: 21300008
+      Mastico_SpriteSheet_40: 21300080
+      Mastico_SpriteSheet_41: 21300082
+      Mastico_SpriteSheet_42: 21300084
+      Mastico_SpriteSheet_43: 21300086
+      Mastico_SpriteSheet_44: 21300088
+      Mastico_SpriteSheet_45: 21300090
+      Mastico_SpriteSheet_46: 21300092
+      Mastico_SpriteSheet_47: 21300094
+      Mastico_SpriteSheet_48: 21300096
+      Mastico_SpriteSheet_49: 21300098
+      Mastico_SpriteSheet_5: 21300010
+      Mastico_SpriteSheet_50: 21300100
+      Mastico_SpriteSheet_51: 21300102
+      Mastico_SpriteSheet_52: 21300104
+      Mastico_SpriteSheet_53: 21300106
+      Mastico_SpriteSheet_54: 21300108
+      Mastico_SpriteSheet_55: 21300110
+      Mastico_SpriteSheet_56: 21300112
+      Mastico_SpriteSheet_57: 21300114
+      Mastico_SpriteSheet_58: 21300116
+      Mastico_SpriteSheet_59: 21300118
+      Mastico_SpriteSheet_6: 21300012
+      Mastico_SpriteSheet_60: 21300120
+      Mastico_SpriteSheet_61: 21300122
+      Mastico_SpriteSheet_62: 21300124
+      Mastico_SpriteSheet_63: 21300126
+      Mastico_SpriteSheet_64: 21300128
+      Mastico_SpriteSheet_65: 21300130
+      Mastico_SpriteSheet_66: 21300132
+      Mastico_SpriteSheet_67: 21300134
+      Mastico_SpriteSheet_68: 21300136
+      Mastico_SpriteSheet_69: 21300138
+      Mastico_SpriteSheet_7: 21300014
+      Mastico_SpriteSheet_70: 21300140
+      Mastico_SpriteSheet_71: 21300142
+      Mastico_SpriteSheet_8: 21300016
+      Mastico_SpriteSheet_9: 21300018
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
